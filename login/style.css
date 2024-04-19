@@ -89,9 +89,6 @@
   
 /* desktop:  
 Breakpoints :
-Les breakpoints sont définis pour les mises en page réactives afin de s'adapter à différentes tailles d'écran.
-Par exemple, les classes .column-x définissent la largeur des colonnes pour une grille de 12 colonnes, où .column-1 occupe 8.33% de la largeur, .column-2 occupe 16.66%, et ainsi de suite.
-Dans la déclaration @media, les règles pour les écrans de taille maximale de 369 pixels sont spécifiées pour que toutes les colonnes prennent 100% de la largeur de l'écran, ce qui permet une mise en page adaptative pour les appareils mobiles.
 */
 .column-1 {width: 8.33%;}
 .column-2 {width: 16.66%;}
