@@ -1,5 +1,4 @@
 <?php
-    $num_section = 5;
     $nom_categorie= [
         "CATÉGORIES DANS ORDINATEUR", 
         "CATÉGORIES DANS TÉLÉPHONE & TABLETTE", 
@@ -23,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Categorie</title>
     <link rel="stylesheet" href="/css/categoriestyle.css">
    
 </head>
@@ -47,26 +46,23 @@
             une sélection variée d'options conçues pour répondre à une multitude de besoins dans le domaine de l'informatique."</h2>
     </section>
     <hr class="line">
-    <?php for ($i = 0; $i < $num_section; $i++) : ?>
         <section>
-            <?php foreach ($nom_categorie as $index => $title_categorie){?>
-            <section>
+            <?php foreach ($nom_categorie as  $title_categorie){?>
                 <?php ?>
-                <h2><?php echo "Indice: $index - $title_categorie"; ?></h2>
+                <h2><?php echo  $title_categorie; ?></h2>
+                <div class="cards">
+                    <?php for ($j = 0; $j < 4; $j++) { ?>
+                        <div id="cardCategorie">
+                            <div class="image"></div>
+                            <h3>lql</h3>
+                        </div>
+                    <?php } ?>
+                </div>
             <?php } ?>
-            <!-- Qui inserisci il resto del codice HTML per la sezione -->
-        
-            <div class="cards">
-                <?php for ($j = 0; $j < 4; $j++) : ?>
-                    <div id="cardcategorie">
-                        <div class="image"></div>
-                        <h3>lql</h3>
-                    </div>
-                <?php endfor; ?>
-            </div>
+            
         </section>
     <hr class="line">
-    <?php endfor; ?>
+
 
 </body>
 </html>
