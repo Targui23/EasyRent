@@ -1,5 +1,5 @@
 <?php
-    $num_sezioni = 5;
+    $num_section = 5;
     $nom_categorie= [
         "CATÉGORIES DANS ORDINATEUR", 
         "CATÉGORIES DANS TÉLÉPHONE & TABLETTE", 
@@ -8,7 +8,9 @@
         "CATÉGORIES DANS CONNECTIQUE", 
         "CATÉGORIES DANS IMAGE & SON",
     ]
-
+    
+    
+    
     
 
 ?>
@@ -43,22 +45,17 @@
         <h1>Explorez notre Catalogue.</h1>
         <h2>"Découvrez notre large gamme de catégories 
             une sélection variée d'options conçues pour répondre à une multitude de besoins dans le domaine de l'informatique."</h2>
-        <div class="catordi">
-            <h2>Ordinateur Dekstops et Laptop</h2>
-            <h3></h3>
-        </div>
-
     </section>
     <hr class="line">
-    <?php for ($i = 0; $i < $num_sezioni; $i++) : ?>
+    <?php for ($i = 0; $i < $num_section; $i++) : ?>
         <section>
-            <?php foreach ($nom_categorie as $title_categorie) : ?>
-            <?php if (!$titolo_visualizzato) : ?>
-                <h2><?php echo $title_categorie; ?></h2>
-                <?php $titolo_visualizzato = true; ?>
-            <?php endif; ?>
+            <?php foreach ($nom_categorie as $index => $title_categorie){?>
+            <section>
+                <?php ?>
+                <h2><?php echo "Indice: $index - $title_categorie"; ?></h2>
+            <?php } ?>
             <!-- Qui inserisci il resto del codice HTML per la sezione -->
-        <?php endforeach; ?>
+        
             <div class="cards">
                 <?php for ($j = 0; $j < 4; $j++) : ?>
                     <div id="cardcategorie">
