@@ -243,3 +243,16 @@ a:visited {
     margin: 50px;
 
 }
+.categorie_cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.categorie_cards h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

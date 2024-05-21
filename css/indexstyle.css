@@ -211,3 +211,45 @@ a:visited{
     margin: 50px;
 
 }
+.footer{
+    background-color: rgb(102, 102, 102);
+    display: flex;
+    flex-direction: column;
+    
+}
+.icon_footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    padding-left: 20px;
+
+}
+.icon_footer .nav_social li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    
+    
+    
+}
+/* .icon_footer .nav_social  li {
+    gap: 10px;
+    list-style: none;
+
+} */
+.facebook .fa-brands,
+.youtube .fa-brands,
+.instagram .fa-brands {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.facebook .fa-brands {
+    /* background-color: blue; */
+    color: rgb(217, 241, 0);
+    border-radius: 50px;
+}
