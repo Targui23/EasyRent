@@ -6,6 +6,8 @@
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetchAll();
+
+    
     
     
     
@@ -15,7 +17,7 @@
 ?>
 
 
-<link rel="stylesheet" href="../css/categoriestyle.css">
+<link rel="stylesheet" href="../css/cataloguestyle.css">
 
 <?php require __ROOT__ .'/public/components/header.php'; ?>
     <section class="titlepage">
@@ -28,6 +30,7 @@
         <?php foreach($row as $title_categorie){ ?>
             <h2><?=  htmlspecialchars ($title_categorie ['Device_category_name']); ?></h2>
             <div class="cards">
+                 <a href="liste_produits.php?id=<?= $title_categorie['Device_category_id']; ?>">
             <?php for ($j = 0; $j < 4; $j++) { ?>
                 <div id="cardCategorie">
                     <div class="image"></div>
