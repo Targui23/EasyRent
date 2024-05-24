@@ -151,7 +151,7 @@ a:visited {
 
 #cardCategorie {
     border: 1px solid black;
-    width: 250px;
+    width: 200px;
     height: 350px;
     margin: 20px;
     padding: 20px;
@@ -242,6 +242,7 @@ a:visited {
     background-color: grey;
     margin: 50px;
 
+    
 }
 .categorie_cards{
     display: flex;
@@ -250,6 +251,7 @@ a:visited {
     align-items: center;
     margin-left: 100px;
     margin-right: 100px;
+    flex-wrap: wrap;
 }
 .categorie_cards h2{
     display: flex;
