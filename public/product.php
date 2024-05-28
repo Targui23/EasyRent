@@ -4,8 +4,14 @@
 
 
     if(isset($_GET['id']) && $_GET['id'] > 0){
-    
-        $sql = "SELECT * FROM device WHERE Device_id = :Device_id";
+        $sql = "SELECT *
+                    FROM device AS d
+                    JOIN device_model AS dm ON d.Device_model_id = dm.Device_model_id
+                    JOIN device_brand AS db ON dm.Device_brand_id = db.Device_brand_id
+                    JOIN have as h ON dm.Device_model_id = h.Device_model_id 
+                    JOIN device_characteristics AS dc ON h.Characteristics_id = dc.Characteristics_id
+                    WHERE d.Device_id = :Device_id";
+
         $stmt = $db->prepare($sql);
         
 
@@ -13,28 +19,42 @@
         
         $stmt->execute();
     
-        $row = $stmt->fetchAll();
+        $records = $stmt->fetchAll();
+        
 
 
-        $sql2 = "SELECT db.Device_brand_name
+        $sql2 = "SELECT *
                     FROM device AS d
                     JOIN device_model AS dm ON d.Device_model_id = dm.Device_model_id
                     JOIN device_brand AS db ON dm.Device_brand_id = db.Device_brand_id
+                    JOIN have as h ON dm.Device_model_id = h.Device_model_id 
+                    JOIN device_characteristics AS dc ON h.Characteristics_id = dc.Characteristics_id
                     WHERE d.Device_id = :Device_id";
 
-        $stmt = $db->prepare($sql2);
+        $stmt2 = $db->prepare($sql2);
         
 
-        $stmt->bindParam(':Device_id', $_GET['id'], PDO::PARAM_INT);
+        $stmt2->bindParam(':Device_id', $_GET['id'], PDO::PARAM_INT);
         
-        $stmt->execute();
+        $stmt2->execute();
     
-        $records = $stmt->fetchAll();
+        $row = $stmt2->fetchAll();
+
+        var_dump($row);
+        exit;
+        
+
+
+        
+    
+
     }
 
+                
+    
 
 
-    // echo var_dump($row);
+    // echo var_dump($records);
 
 ?>
 
@@ -43,32 +63,34 @@
     
     <?php require __ROOT__ .'/public/components/header.php'; ?>
     <section class="fiche_product">
-        <?php if(isset($row) && !empty($row)) { ?>
-            <?php foreach($row as $device){ ?>
+        <?php if(isset($records) && !empty($records)) { ?>
+            <?php foreach($records as $devicebrand){ ?>
             <div>
                 <div id="cardCategorie">
                     <a href=""></a>
                     <div class="image">
-                        <img src="<?=  htmlspecialchars ($device ['Device_image']); ?>" alt="" style="wight: 100px; height: 100px;">
+                        <img src="<?=  htmlspecialchars ($devicebrand ['Device_image']); ?>" alt="" style="wight: 100px; height: 100px;">
                     </div>
                     <div>
-                        <h3><?=  htmlspecialchars ($device ['Device_name']); ?></h3>
-                        <?php foreach($records as $devicebrand){ ?>
+                        
                             <p><?=  htmlspecialchars ($devicebrand ['Device_brand_name']); ?></p>
+                            <p><?=  htmlspecialchars ($devicebrand ['Device_model_name']); ?></p>
+                    
+                        <h2><?=  htmlspecialchars ($devicebrand ['Device_priceRent']); ?>€</h2>
+                        <p><?=  htmlspecialchars ($devicebrand ['Device_description']); ?></p>
+                        <p><?=  htmlspecialchars ($devicebrand ['Device_status']); ?></p>
+                        <?php foreach($devicebrand as $cara){ ?>
+                        <p><?=  htmlspecialchars ($cara ['Characteristics_name']); ?></p>
+                        <p><?=  htmlspecialchars ($cara ['Size']); ?></p>
                         <?php } ?>
-                        <h2><?=  htmlspecialchars ($device ['Device_priceRent']); ?>€</h2>
-                        <p><?=  htmlspecialchars ($device ['Device_description']); ?></p>
-                        <p><?=  htmlspecialchars ($device ['Device_description']); ?></p>
-                        <p><?=  htmlspecialchars ($device ['Device_status']); ?></p>
+                        
                         
 
                     </div>
                 </div>
             </div>
             <?php } ?>
-        <?php } else { ?>
-            <p>Nessun prodotto trovato</p>
-        <?php } ?>
+        <?php } ?><
 
     
 

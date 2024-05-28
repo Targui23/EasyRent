@@ -7,17 +7,26 @@
 
         
     
-        $sql = "SELECT * FROM device WHERE Device_subCategory_id = :Device_subCategory_id";
-        $stmt = $db->prepare($sql);
-        
-        
-        $stmt->bindParam(':Device_subCategory_id', $_GET['id'], PDO::PARAM_INT);
-        
-        
-        $stmt->execute();
-        
-        
-        $row = $stmt->fetchAll();
+      $sql = "SELECT device.Device_id, device_model.Device_model_name, device.Device_id, device.Device_image,device.Device_priceRent
+            FROM device
+            INNER JOIN device_model ON device.Device_model_id = device_model.Device_model_id
+            WHERE device.device_subCategory_id = :Device_subCategory_id";
+    
+    // Prepara la dichiarazione
+    $stmt = $db->prepare($sql);
+
+    // Associa il parametro
+    $stmt->bindParam(':Device_subCategory_id', $_GET['id'], PDO::PARAM_INT);
+
+    // Esegui la query
+    $stmt->execute();
+
+    // Recupera i risultati
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($rows);
+   
+
     }
 
     
@@ -35,15 +44,15 @@
 <body>
     <?php require __ROOT__ .'/public/components/header.php'; ?>
     <section class="categorie_cards">
-        <?php if(isset($row) && !empty($row)) { ?>
-            <?php foreach($row as $device){ ?>
+        <?php if(isset($rows) && !empty($rows)) { ?>
+            <?php foreach($rows as $device){ ?>
                 <div id="cardCategorie">
                     <a href="product.php?id=<?= $device['Device_id']; ?>">
                     <div class="image">
                         <img src="<?=  htmlspecialchars ($device ['Device_image']); ?>" alt="" style="wight: 100px; height: 100px;">
                     </div>
                     <div>
-                        <h3><?=  htmlspecialchars ($device ['Device_name']); ?></h3>
+                        <h3><?=  htmlspecialchars ($device ['Device_model_name']); ?></h3>
                         <h2><?=  htmlspecialchars ($device ['Device_priceRent']); ?>€</h2>
                     </div>
                 </div>
