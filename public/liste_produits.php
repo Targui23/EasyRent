@@ -24,7 +24,8 @@
     // Recupera i risultati
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    var_dump($rows);
+    // var_dump($rows);
+    // exit;
    
 
     }
