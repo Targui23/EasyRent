@@ -3,20 +3,20 @@
     require __ROOT__ . "/include/connect.php";
 
 
-    if(isset($_GET['id']) && $_GET['id'] > 0){
+    if(isset($_GET['SC_id']) && $_GET['SC_id'] > 0){
 
         
     
-      $sql = "SELECT device.Device_id, device_model.Device_model_name, device.Device_id, device.Device_image,device.Device_priceRent
-            FROM device
-            INNER JOIN device_model ON device.Device_model_id = device_model.Device_model_id
-            WHERE device.device_subCategory_id = :Device_subCategory_id";
+      $sql = "SELECT d.Device_id, dm.Device_model_name, d.Device_id, d.Device_image, d.Device_priceRent, d.Device_model_id
+            FROM device as d 
+            INNER JOIN device_model as dm ON d.Device_model_id = dm.Device_model_id
+            WHERE d.device_subCategory_id = :Device_subCategory_id";
     
     // Prepara la dichiarazione
     $stmt = $db->prepare($sql);
 
     // Associa il parametro
-    $stmt->bindParam(':Device_subCategory_id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->bindParam(':Device_subCategory_id', $_GET['SC_id'], PDO::PARAM_INT);
 
     // Esegui la query
     $stmt->execute();
@@ -48,7 +48,7 @@
         <?php if(isset($rows) && !empty($rows)) { ?>
             <?php foreach($rows as $device){ ?>
                 <div id="cardCategorie">
-                    <a href="product.php?id=<?= $device['Device_id']; ?>">
+                    <a href="product.php?dm_id=<?= $device['Device_model_id']; ?>">
                     <div class="image">
                         <img src="<?=  htmlspecialchars ($device ['Device_image']); ?>" alt="" style="wight: 100px; height: 100px;">
                     </div>

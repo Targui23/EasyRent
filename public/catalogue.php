@@ -49,7 +49,7 @@
                 <?php foreach($subCategories[$category['Device_category_id']] as $subCategory){ ?>
                     <div id="cardCategorie">
                         <div class="image"></div>
-                        <a href="liste_produits.php?id=<?= $subCategory['Device_SubCategory_id']; ?>">
+                        <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>">
                         <h3><?= htmlspecialchars($subCategory['Device_SubCategory_Name']); ?>
                         
                         

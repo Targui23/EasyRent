@@ -22,7 +22,9 @@
                 <li>Contact</li>
             </ul>
         </nav>
-        <button class="headerbutton">Connexion</button>
+        <li><a class="login" href="/admin/login.php">
+                    <i class="fa-solid fa-house-user"></i></i>
+                </a></li>
     </header>
 </body>
 </html>
