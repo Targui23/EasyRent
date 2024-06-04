@@ -2,11 +2,26 @@
     define('__ROOT__', $_SERVER['DOCUMENT_ROOT']);
     require __ROOT__ . "/include/connect.php";
 
+
+    require __ROOT__ .'/public/components/header.php'; 
+
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="/css/indexstyle.css">
+    <link href="/assets/css/fontawesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+    
+   
+</head>
+
 
 
 <body>
-    <?php require __ROOT__ .'/public/components/header.php'; ?>
     <section id="hero">
       <h2 class="titlehero">"Parce que louer n'a jamais été aussi facile."</h2>
       <div class="buttons">
@@ -23,7 +38,7 @@
         </div>
         <div></div>
     </section>
-    <section>
+    <!-- <section>
         <div class="recherche">
             <div class="categori">
                 <select name="select" id="" class="select">
@@ -78,7 +93,7 @@
 
     </section>
     <hr class="line">
-    <section class="servives">
+    <section id="services">
         <div class="servicestitle"> 
             <h2>Nos services</h2>
             <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ullam alias hic iste officiis</h3>
@@ -108,7 +123,7 @@
     
     </section>
     <hr class="line">
-    <section class="about">
+    <section id="about">
         <div class="firstcontainer">
             <div class="abouttext">
                 <h2>Who we are?</h2>
@@ -132,7 +147,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
     <hr class="line">
     <?php require __ROOT__ .'/public/components/footer.php'; ?>
 
