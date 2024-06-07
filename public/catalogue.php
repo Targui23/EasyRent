@@ -56,7 +56,7 @@
                     </div>
                 <?php } ?>
             </div>
-            <hr class="line">
+            
         <?php } ?> 
     </section>
     <?php require __ROOT__ .'/public/components/footer.php'; ?>

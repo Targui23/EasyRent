@@ -30,7 +30,7 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
 
 
 ?>
-
+<link rel="stylesheet" href="../css/productstyle.css">
 <body>
     <?php require __ROOT__ .'/public/components/header.php'; ?>
     <section class="fiche_product">
@@ -40,7 +40,7 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
                 <div id="cardCategorie">
                     <a href=""></a>
                     <div class="image">
-                        <img src="<?= htmlspecialchars($devices['Device_image']); ?>" alt="" style="width: 100px; height: 100px;">
+                        <img src="<?= htmlspecialchars($devices['Device_image']); ?>" alt="phto of product" style="width: 100px; height: 100px;">
                     </div>
                     <div>
                         <p><?= htmlspecialchars($devices['Device_brand_name']); ?></p>

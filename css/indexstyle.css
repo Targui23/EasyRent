@@ -1,12 +1,9 @@
 
 
     body {
-            background: rgb(219, 219, 219);
-            margin: 0;
-        }
-    
-        
-    
+        background: rgb(219, 219, 219);
+        margin: 0;
+    }
         .line {
             margin: 0;
             padding: 0;
@@ -22,19 +19,31 @@
             gap: 20px;
             padding: 50px;
             margin-bottom: 20px;
+            background-color: rgba(0, 0, 253, 0.116);
         }
     
         .select {
-            width: 200px;
+            max-width: 500px;
             height: 30px;
             border-radius: 10px;
         }
     
         .input {
             border-radius: 10px;
-            width: 250px;
+            max-width: 300px;
             height: 30px;
     
+        }
+
+        .enter{
+            width: 100px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: rgb(197, 168, 6);
+            border: none;
+            box-shadow:  7px 2px 11px 0px rgba(0, 0, 0, 0.63);
+            
+                
         }
     
         #hero {
@@ -131,11 +140,9 @@
     
         }
     
-        #card.image {
-            background: url(../img/pcsell.jpg);
-            width: auto;
+        .cards #card.image {
+            width: 100px;
             height: 100px;
-            background-size: 100%;
         }
     
         .brands {
