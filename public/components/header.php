@@ -21,8 +21,8 @@
                 <li><a href="/public/catalogue.php">Catalogue</a>
                 </li>
                 <li><a href="/public/index.php#services">Nos services</a></li>
-                <li><a href="/public/index.php#about">A propose</a></li>
-                <li><a href="/public/index.php#services">Contact</a></li>
+                <li><a href="/public/index.php#about_us">A propose</a></li>
+                <li><a href="/public/index.php#contact_us">Contact</a></li>
             </ul>
             <ul class="side_bar">
                 <div>
@@ -38,10 +38,10 @@
                     <a href="/public/index.php#services">Nos services</a>
                 </li>
                 <li>
-                    <a href="/public/index.php#about">A propose</a>
+                    <a href="/public/index.php#about_us">A propose</a>
                 </li>
                 <li>
-                    <a href="/public/index.php#services">Contact</a>
+                    <a href="/public/index.php#contact_us">Contact</a>
                 </li>
                 <li>
                     <a class="sidebar_login" href="/admin/login.php">Log in

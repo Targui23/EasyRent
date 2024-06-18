@@ -18,13 +18,25 @@
                 ORDER BY RAND()
                 LIMIT 4"; // Puoi modificare il numero di prodotti visualizzati modificando il valore di LIMIT
 
-// Prepara e esegui la query per i prodotti casuali
+    // Prepara e esegui la query per i prodotti casuali
     $stmt_products = $db->prepare($sql_products);
     $stmt_products->execute();
     $random_products = $stmt_products->fetchAll(PDO::FETCH_ASSOC);
 
     // Debug: Visualizza i prodotti casuali
-    var_dump($random_products);
+    
+
+    $directory = '../img/brands_logo';
+
+    $files = scandir($directory);
+
+    $validExtensions = ['jpg', 'jpeg', 'png', 'gif']; 
+    $images = array_filter($files, function($file) use ($directory, $validExtensions) {
+        $extension = pathinfo($file, PATHINFO_EXTENSION);
+        return in_array(strtolower($extension), $validExtensions) && is_file("$directory/$file");
+    });
+
+    
 
     
 
@@ -70,7 +82,7 @@
     <section>
         <div class="recherche">
             <div class="categori">
-                <select name="select" id="" class="select">
+                <select name="select" class="select">
                     <?php foreach ($categories as $category){ ?>
                     <option value="pcfix"><?=  htmlspecialchars ($category['Device_category_name']); ?></option>
                     <?php } ?>
@@ -89,13 +101,16 @@
         </div>
         <?php foreach($random_products as $random_product) { ?>
         <div class="cards">
-            <div id="card">
+            <div id="single_card">
                 <div class="image">
-                    <img src="<?=  htmlspecialchars ($random_product['Device_image']); ?>" alt="" style="width: 100px; height: 100px;">
+                    <img src="<?=  htmlspecialchars ($random_product['Device_image']); ?>" alt="" >
                 </div>
-                <h2><?=  htmlspecialchars ($random_product['device_brand_name']); ?></h2>
-                <h3><?=  htmlspecialchars ($random_product['device_model_name']); ?></h2>
-                <h3><?=  htmlspecialchars ($random_product['Device_priceRent']); ?></h3>
+                <div class="name_product">
+                    <h2><?=  htmlspecialchars ($random_product['device_brand_name']); ?></h2>
+                    <h3><?=  htmlspecialchars ($random_product['device_model_name']); ?></h2>
+                
+                    <h3><?=  htmlspecialchars ($random_product['Device_priceRent']); ?></h3>
+                </div>
             </div>
             <?php } ?>
         </div>
@@ -108,11 +123,17 @@
             <h2>Les brands chez nous</h2>
 
         </div>
-        <div class="logobrands">
-            <img src="../img/apple.png" alt="">
-            <img src="../img/apple.png" alt="">
-            <img src="../img/apple.png" alt="">
-            <img src="../img/apple.png" alt="">
+        
+        <div class="scroller" data-direction="right  ">
+             <div class="scroller_inner">
+                <?php foreach($images as $image) { ?>
+                    
+                    <img src="../img/brands_logo/<?= $image ?>" alt="" >
+                    
+               <?php }
+                    ?>
+                
+            </div>
         </div>
 
     </section>
@@ -122,56 +143,161 @@
             <h2>Nos services</h2>
             <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ullam alias hic iste officiis</h3>
         </div>
-        <div class="process">
-            <div class="iconprocess">
-                <img src="../img/user.png" alt="" class="icon">
+        <div class="container">
+            <div class="steps">
+                <span class="circle active">
+                    1
+                </span>
+                <span class="circle">
+                    2
+                </span>
+                <span class="circle">
+                    3
+                </span>
+                <span class="circle">
+                    4
+                </span>
+                <span class="circle">
+                    5
+                </span>
+                <div class="progress-bar">
+                    <span class="indicator">
+
+                    </span>
+                </div>
             </div>
-            <hr>
-            <div class="iconprocess">
-                <img src="../img/user.png" alt="" class="icon">
-            </div>
-            <hr>
-            <div class="iconprocess">
-                <img src="../img/user.png" alt="" class="icon">
-            </div>
-            <hr>
-            <div class="iconprocess">
-                <img src="../img/user.png" alt="" class="icon">
-            </div>
-            <hr>
-            <div class="iconprocess">
-                <img src="../img/user.png" alt="" class="icon">
+            <div class="buttons">
+                <button id="prev" >Prev</button>
+                <button id="next">Next</button>
             </div>
 
         </div>
     
     </section>
     <hr class="line">
-    <section id="about">
-        <div class="firstcontainer">
-            <div class="abouttext">
-                <h2>Who we are?</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore molestiae, 
-                    officiis quam quisquam maiores velit nobis dolores, magnam corrupti laborum 
-                    reiciendis maxime rem est cumque voluptatum nemo quo architecto harum.
-                </p>
+<section id="about_us">
+    <div class="punch_line">
+        <span>
+            <h2>"Easy Rent,</h2>
+            <h3> où la qualité de service se traduit par une expérience impeccable et satisfaisante dans la location de produits informatiques."</h3>
+        </span>
+        <img src="/img/photo_accueil/happyclient.jpg" alt="happy client " style="width : 500px; height: 300px; ">
+    </div>
+    <div class="who_we_are">
+        <img src="/img/photo_accueil/who_we_are.jpg" alt="happy client " style="width : 400px; height: 250px; ">
+        <span>
+            <h2>Qui sommes-nous</h2>
+            <h3>Easy Rent : 
+                votre référence depuis 2010 pour accéder au meilleur de la technologie sans barrières. 
+                Nous sommes une équipe de passionnés, engagés à transformer la manière dont vous vivez et travaillez 
+                avec les dispositifs électroniques. Qu'il s'agisse d'ordinateurs, de smartphones, de tablettes ou de 
+                périphériques avancés, notre mission est de démocratiser l'accès aux technologies les plus récentes 
+                avec des solutions de location flexibles et accessibles. Nous ne voulons pas seulement vous fournir 
+                un produit, mais vous offrir une expérience extraordinaire, vous permettant d'explorer, d'innover et 
+                de grandir sans limitations.
+            </h3>
+        </span>
+    </div>
+    <div class="our_offer">
+        <span>
+            <h2>Notre offre</h2>
+            <h3>
+                Imaginez un monde où la technologie n'a pas de frontières, 
+                où vous pouvez toujours avoir à votre disposition le dispositif 
+                adéquat pour vos besoins, sans le poids des coûts initiaux exorbitants. 
+                Easy Rent rend tout cela possible avec une gamme incroyable de produits, 
+                des ordinateurs portables puissants pour le travail créatif aux tablettes 
+                pour l'apprentissage et la communication. Notre offre ne se limite pas à 
+                vous fournir les outils les plus avancés, mais comprend également un service 
+                client d'excellence et un support technique constant. Chaque solution que nous
+                proposons est conçue pour être flexible et personnalisable, afin que vous puissiez 
+                vous concentrer sur ce qui compte vraiment, pendant que nous nous occupons du reste.
+                Avec Easy Rent, la technologie devient un allié sans compromis.
+            </h3>
+        </span>
+        <img src="/img/photo_accueil/equipement_informatique" alt="happy client " style="width : 300px; height: 400px; ">
+       
+    </div>
+    <div class="our_mission">
+        <img src="/img/photo_accueil/mission" alt="happy client " style="width : 500px; height: 300px; ">
+        <span>
+            <h2>Notre mission</h2>
+            <h3>Chez Easy Rent, notre engagement va au-delà de l'offre de technologies de pointe. Nous sommes profondément convaincus que l'avenir 
+                de la planète dépend des choix que nous faisons aujourd'hui. C'est pourquoi nous nous engageons activement dans des initiatives de 
+                durabilité environnementale, telles que le recyclage et la réduction des déchets électroniques, prolongeant ainsi la durée de vie des 
+                dispositifs. Nous collaborons avec des partenaires écologiques pour assurer que nos produits soient éliminés de manière responsable et
+                durable. Mais notre engagement ne s'arrête pas là : nous soutenons également des initiatives sociales pour réduire la fracture numérique,
+                en faisant don de matériel reconditionné aux écoles et aux communautés défavorisées. Nous sommes convaincus que chaque location avec Easy Rent 
+                est un pas vers un monde plus équitable et durable. Avec notre approche basée sur la transparence et la responsabilité, nous travaillons pour 
+                garantir un impact positif à long terme, tant pour nos clients que pour l'environnement. Rejoignez-nous et faites partie d'une communauté qui croit 
+                en la technologie comme une force motrice pour un changement positif.
+            </h3>
+        </span>
+    </div>
+    <div class="our_work">
+        <span>
+            <h2>Notre travail</h2>
+            <h4>Chez Easy Rent, notre façon de travailler est orientée vers la recherche constante de la meilleure solution pour nos clients, 
+                en trouvant le parfait équilibre entre prix et qualité. Nous sommes conscients que chaque besoin est unique et c'est pourquoi
+                nous nous engageons à offrir des propositions personnalisées qui répondent aux nécessités spécifiques de chaque client. Grâce
+                à une analyse attentive et une sélection rigoureuse des produits, nous garantissons des dispositifs technologiques à la pointe 
+                de la technologie à des tarifs compétitifs, sans compromis sur la qualité. Notre philosophie repose sur l'écoute et la collaboration 
+                : nous travaillons en étroite collaboration avec nos clients pour comprendre leurs réels besoins et fournir des solutions qui améliorent 
+                leur expérience technologique. Nous visons l'excellence non seulement dans les produits, mais aussi dans le service, en assurant une assistance
+                dédiée et un support continu pour rendre la location une expérience simple et satisfaisante. Avec Easy Rent, vous avez un partenaire qui travaille 
+                à vos côtés pour vous offrir toujours le meilleur.
+            </h4>
+        </span>
+        <img src="/img/photo_accueil/our_work" alt="happy client " style="width : 500px; height: 300px; ">
+    </div>
+</section>
+<hr class="line">
+<section id="contact_us">
+    <div class="hero_contact">
+        <h2 class="titlehero">"Besoin d'aide ? Notre équipe est à votre disposition."</h2>
+    </div>
+    <div class="contact_form">
+        <h2>Contactez-nous</h2>
+        <form class="form" action="#" method="post">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
             </div>
-            <div class="aboutimage">
-                <img src="../img/logo.png" alt="">
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom" required>
             </div>
-        </div>
-        <div class="secondcontainer">
-            <div class="aboutimage">
+            <div class="form-group">
+                <label for="telephone">Numéro de Téléphone:</label>
+                <input type="tel" id="telephone" name="telephone" required pattern="[0-9]{10}">
             </div>
-            <div class="abouttext">
-                <h2>Who we are?</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore molestiae, 
-                    officiis quam quisquam maiores velit nobis dolores, magnam corrupti laborum 
-                    reiciendis maxime rem est cumque voluptatum nemo quo architecto harum.
-                </p>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
             </div>
-        </div>
-    </section> 
-    <hr class="line">
-    <?php require __ROOT__ .'/public/components/footer.php'; ?>
+            <div class="form-group">
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <div class="">
 
+    </div>
+
+    
+      
+
+
+</section>
+
+
+
+
+
+
+</body>
+<footer>
+    <?php require __ROOT__ .'/public/components/footer.php'; ?>
+</footer>
+
+<script src="/Js/indexjs.js"></script>
