@@ -280,7 +280,26 @@
             </div>
         </form>
     </div>
-    <div class="">
+     <div class="line-with-text-container">
+        <span>
+           ou venez nous rendre visite
+        </span>
+    </div>
+    <div class="contact_location">
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.940963818931!2d6.173874175429574!3d49.106761983197124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794dd50b1aeb723%3A0x3f41549215e3dc57!2sMetz%20Numeric%20School!5e0!3m2!1sfr!2sfr!4v1718788919623!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+            <h2>Contact</h2>
+            <p>13 Rue des Clercs<br>57000 Metz, France <br>easyrent@info.com <br>(+33) 06-33-23-78-99  </p>
+            <p>57000 Metz, France</p>
+            <p>easyrent@info.com</p>
+            
+            <p>(+33) 06-33-23-78-99</p>
+        </div>
+        
+    </div>
+
 
     </div>
 

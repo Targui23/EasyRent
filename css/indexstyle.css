@@ -508,6 +508,15 @@
             
         }
 
+        .form{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            
+        }
+
         .form-group {
             margin-bottom: 15px;
             display: flex;
@@ -524,12 +533,20 @@
             font-weight: bold;
         }
 
-        .form-group input,
+        .form-group input{
+            width: 300px;
+            height: 30px;
+
+        }
+
+        
         .form-group textarea {
-            width: 500px;
+            width: 950px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            resize: none;
+            height: 100px;
         }
 
         .form-group textarea {
@@ -552,6 +569,30 @@
 
         .form-group button:hover {
             background-color: rgb(161, 103, 9);
+        }
+
+        .line-with-text-container {
+            position: relative;
+            text-align: center;
+            border-top: 1px solid #000;
+            margin: 20px 0;
+        }
+
+        .line-with-text-container span {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 0 10px;
+        }
+
+        .contact_location{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
         }
 
 
