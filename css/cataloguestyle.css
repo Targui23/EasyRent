@@ -5,50 +5,26 @@ body {
     width: auto;
 }
 
-.mainheader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 11px 42px;
-    background: rgb(210, 210, 210);
+a {
+    text-decoration: none;
+
 }
 
-.mainheader nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    gap: 30px;
+a:visited {
+    color: inherit;
+    /* Usa lo stesso colore del testo del link normale */
 }
 
-.headerbutton {
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-}
 
-.line {
-    margin: 0;
-    padding: 0;
-    margin-left: 350px;
-    margin-right: 350px;
-    border: 1px solid rgb(39, 39, 39);
-}
 .titlepage{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-}
-
-.recherche {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    padding: 50px;
-    margin-bottom: 20px;
+    margin: 20px;
+    text-align: center;
+    
+    
 }
 
 .select {
@@ -64,83 +40,11 @@ body {
 
 }
 
-#hero {
-    /* background: color url() repeat position-h position-v/size-h size-v */
-    background: url('../img/pc.jpg') no-repeat center/cover;
-    height: calc(100vh - 68px);
-    text-align: center;
-    display: flex;
-    gap: 40px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
+
 
 .titlehero {
     color: white;
     text-transform: uppercase;
-}
-
-.punchlinet {
-    color: rgb(20, 33, 61);
-    padding: 0;
-}
-
-.punchlinep {
-    color: rgb(219, 140, 13);
-    padding: 0;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-a.button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(252, 163, 17);
-    width: 130px;
-    height: 40px;
-    text-decoration: none;
-    border-radius: 10px;
-
-}
-
-a:visited {
-    color: inherit;
-
-}
-
-.button:hover {
-    background-color: rgb(248, 175, 58);
-}
-
-.punchline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.popular {
-    margin: 50px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.populartitle {
-    margin-bottom: 30px;
 }
 
 .cards {
@@ -148,116 +52,40 @@ a:visited {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    /* gap: 20px; */
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 20px;
+    margin-bottom: 40px;
 }
 
 #cardCategorie {
     border: 1px solid black;
-    width: 200px;
-    height: 350px;
-    margin: 20px;
-    padding: 20px;
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    background-image: url('../img/cafer-mert-ceyhan-LAY19dUD_ro-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* z-index: -1; */
+    /* margin: 10px;  */
+    /* padding: 20px; */
+    /* margin-bottom: 40px; */
 
 }
 
 #cardCategorie.image {
-    background: url(../img/pcsell.jpg);
+    
     width: auto;
     height: 100px;
     background-size: 100%;
 }
 
-.brands {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
 
-.logobrands {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.servives {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.servicestitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.process {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-
-}
-
-.icon {
-    border: solid 1px black;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-
-.process hr {
-    margin: 0;
-    padding: 0;
-    border: solid 1px black;
-    width: 150px;
-}
-
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.aboutimage {
-    width: auto;
-    height: 100%;
-}
-
-.secondcontainer,
-.firstcontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background-color: grey;
-    margin: 50px;
-
-    
-}
-.categorie_cards{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    flex-wrap: wrap;
-}
-.categorie_cards h2{
+h2{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
 

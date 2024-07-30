@@ -4,6 +4,14 @@
         background: rgb(255, 255, 255);
         margin: 0;
     }
+        a {
+            text-decoration: none;
+    
+        }
+    
+        a:visited {
+            color: inherit;
+        } /* Usa lo stesso colore del testo del link normale */
         .line {
             margin: 0;
             padding: 0;

@@ -1,3 +1,155 @@
 body{
     margin: 0;
 }
+
+a {
+    text-decoration: none;
+
+}
+
+a:visited {
+    color: inherit;
+    /* Usa lo stesso colore del testo del link normale */
+}
+.fiche_product{
+    
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;  
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.product_topside{
+    display: flex;
+    /* border: solid 1px black; */
+    height: auto;
+}
+
+#cardCategorie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+}
+
+.fiche_product  img{
+    width: 500px;
+    width: 500px;
+    display: flex;
+    align-items: flex-start;
+    
+    
+}
+
+.product_left_side{
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /* border: solid 1px black; */
+    margin-top: 50px;
+
+}
+
+.product_left_side h2{
+    margin: 5px;
+    /* padding-top: 20px; */
+}
+
+
+.product_service{
+    margin-bottom: 20px;
+    
+}
+
+.product_service span{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    align-items: center;
+    border: solid black 1px;
+    width: 300px;
+    height: auto;
+    padding-inline-start: 10px;
+    margin: 20px;
+    
+   
+    
+    
+}
+
+.product_service span i{
+    padding-right: 15px;
+    size: 40px;
+}
+
+.product_description{
+    text-align: left;
+    padding: 20px;
+    font-size: 15px ;
+    
+   
+}
+
+.carateristic_tablle{
+    width: 1000px;
+}
+
+
+
+/* Stili per il modal e l'overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Sfondo sfocato */
+    z-index: 1000;
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}

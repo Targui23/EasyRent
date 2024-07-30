@@ -1,6 +1,6 @@
 <?php
 define('__ROOT__', $_SERVER['DOCUMENT_ROOT']);
-require __ROOT__ . "/include/connect.php";
+require __ROOT__ . "/admin/include/connect.php";
 
 if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
    
@@ -25,40 +25,118 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
     $stmt2->bindParam(':Device_model_id', $_GET['dm_id'], PDO::PARAM_INT);
     $stmt2->execute();
     $row = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+    session_start();
     
 }
 
 
 ?>
-<link rel="stylesheet" href="../css/productstyle.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyRent</title>
+    <link rel="stylesheet" href="../css/productstyle.css">
+    <link href="/assets/css/fontawesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+    
+   
+</head>
+
 <body>
     <?php require __ROOT__ .'/public/components/header.php'; ?>
     <section class="fiche_product">
         <?php if(isset($records) && !empty($records)) { ?>
             <?php foreach($records as $devices){ ?>
-            <div>
+            <div class="product_topside">
                 <div id="cardCategorie">
                     <a href=""></a>
                     <div class="image">
-                        <img src="<?= htmlspecialchars($devices['Device_image']); ?>" alt="phto of product" style="width: 100px; height: 100px;">
+                        <img src="<?= htmlspecialchars($devices['Device_image']); ?>" alt="phto of product" >
                     </div>
-                    <div>
-                        <p><?= htmlspecialchars($devices['Device_brand_name']); ?></p>
-                        <p><?= htmlspecialchars($devices['Device_model_name']); ?></p>
-                        <h2><?= htmlspecialchars($devices['Device_priceRent']); ?>€</h2>
-                        <p><?= htmlspecialchars($devices['Device_description']); ?></p>
-                        <p><?= htmlspecialchars($devices['Device_status']); ?></p>
+                    <div class="product_left_side">
+                        <h2><?= htmlspecialchars($devices['Device_brand_name']); ?> <?= htmlspecialchars($devices['Device_model_name']); ?></h2>
+                        <h2><?= htmlspecialchars($devices['Device_priceRent']); ?>€/mois</h2>
+                        <h2>status : <?= htmlspecialchars($devices['Device_status']); ?></h2>
+                        <div class="product_service">
+                            <span>
+                                <i class="fa-solid fa-umbrella"></i>
+                                <p>Couverture d'assurance incluse</p>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <p>Durée de location flexible</p>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-building"></i>
+                                <p>Retrait uniquement sur site</p>
+                            </span>
+
+
+                        </div>
+                        <?php 
+                           
+                            if(isset($_SESSION['user_connected']) && $_SESSION['user_connected'] == 'ok'){
+                        ?>
+                            <h3>louer dès maintenant!</h3>
+                           <button class="open-modal-btn" data-product-id="<?php echo htmlspecialchars($_GET['dm_id']); ?>" data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">Affitta questo prodotto</button
+
+
+
+                            <!-- Modal nascosto -->
+                            <div class="modal" id="bookingModal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h2>Prenota questo prodotto</h2>
+                                    <p>Prodotto ID: <span id="modalProductId"></span></p>
+                                    <p>Utente ID: <span id="modalUserId"></span></p>
+                                    <form id="bookingForm" method="post">
+                                        <label for="bookingDate">Seleziona la data di prenotazione:</label>
+                                        <input type="date" id="start_reservation" name="start_reservation" required>
+                                        <input type="date" id="end_reservation" name="end_reservation" required>
+                                        <button type="submit">Prenota</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Copertura sfondo modale -->
+                            <div class="modal-overlay"></div>
+
+                                                        
+
+
+                        <?php } ?>
                     </div>
                 </div>
             </div>
             <?php } ?>
+            <div class="product_description">
+                <h3>Description</h3>
+                <p><?= htmlspecialchars($devices['Device_description']); ?></p>
+
+            </div>
 
             <div>
                 <h3>Caractéristiques</h3>
                 <?php if(isset($row) && !empty($row)) { ?>
-                    <?php foreach($row as $char) { ?>
-                        <p><?= htmlspecialchars($char['Characteristics_name']); ?>: <?= htmlspecialchars($char['Size']); ?></p>
-                    <?php } ?>
+                    <table class="carateristic_tablle" style="border: solid black 1px">
+                        <thead>
+                            <tr>
+                                <th>Nom de la Caractéristique</th>
+                                <th>Taille</th>
+                            </tr>
+                        </thead>
+                        <tbody style="border: solid black 1px">
+                            <?php foreach($row as $char) { ?>
+                                <tr style="border: solid black 1px">
+                                    <td style="border: solid black 1px"><?= htmlspecialchars($char['Characteristics_name']); ?></td>
+                                    <td style="border: solid black 1px"><?= htmlspecialchars($char['Size']); ?></td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 <?php } ?>
             </div>
         <?php } ?>
@@ -67,3 +145,5 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
         <?php require __ROOT__ .'/public/components/footer.php'; ?>
     </footer>
 </body>
+
+<script src="../js/modal_reservation.js"></script>

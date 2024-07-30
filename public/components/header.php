@@ -1,3 +1,15 @@
+<?php
+
+    // session_start(); // Avvia la sessione
+
+    //Verifica se l'utente è connesso
+    $user_connected = isset($_SESSION['user_connected']) && $_SESSION['user_connected'] === "ok";
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +35,20 @@
                 <li><a href="/public/index.php#services">Nos services</a></li>
                 <li><a href="/public/index.php#about_us">A propose</a></li>
                 <li><a href="/public/index.php#contact_us">Contact</a></li>
+                <li><a href="/admin/logout.php">Log Out</a></li>
+                <?php 
+
+                    
+                   
+                    // if (isset($_SESSION['user_connected']) && $_SESSION['user_connected'] === "ok") {
+                    //     var_dump($_SESSION);
+                    //     exit;
+                    //     echo '<li><a href="/admin/logout.php">Log Out</a></li>';
+                    
+                    // } 
+
+                    
+                ?>
             </ul>
             <ul class="side_bar">
                 <div>
@@ -43,22 +69,28 @@
                 <li>
                     <a href="/public/index.php#contact_us">Contact</a>
                 </li>
-                <li>
-                    <a class="sidebar_login" href="/admin/login.php">Log in
-                        <i class="fa-solid fa-house-user "></i>
-                    </a>
-                </li>
+                
+                
                 
             </ul>
         </nav>
+
+        <?php if(isset($_SESSION['user_connected']) && $_SESSION['user_connected'] == "ok"){ ?>
+            <li class="login">
+                <a class="login" href="/admin/login.php">
+                        <i class="fa-solid fa-bars"></i>
+                </a>
+            </li>
+        <?php }else { ?>
+            <li class="login">
+                <a class="login" href="/admin/login.php">
+                        <i class="fa-solid fa-house-user "></i>
+                </a>
+            </li>
+            <img src="../img/icon/icon_open.png" alt="" class="menu_navbar" onclick=showSideBar()>
+        <?php  } ?>
         
-        <li class="login">
-            <a class="login" href="/admin/login.php">
-                    <i class="fa-solid fa-house-user "></i>
-            </a>
-        </li>
-       
-        <img src="../img/icon/icon_open.png" alt="" class="menu_navbar" onclick=showSideBar()>
+        
        
         
     </header>

@@ -1,6 +1,6 @@
 <?php
     define('__ROOT__', $_SERVER['DOCUMENT_ROOT']);
-    require __ROOT__ . "/include/connect.php";
+    require __ROOT__ . "/admin/include/connect.php";
 
     
     $sql = "SELECT * FROM device_category";
@@ -32,31 +32,42 @@
     }
 ?>
 
-<link rel="stylesheet" href="../css/cataloguestyle.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cataloguestyle.css">
+    <title>Easy rent </title>
+</head>
+<body>
+    
 
-<?php require __ROOT__ .'/public/components/header.php'; ?>
-    <section class="titlepage">
-        <h1>Explorez notre Catalogue.</h1>
-        <h2>"Découvrez notre large gamme de catégories 
-            une sélection variée d'options conçues pour répondre à une multitude de besoins dans le domaine de l'informatique."</h2>
-    </section>
-    <hr class="line">
-    <section class="categorie_cards">
-        <?php foreach($categories as $category){ ?>
-            <h2><?=  htmlspecialchars ($category['Device_category_name']); ?></h2>
-            <div class="cards">
+    <?php require __ROOT__ .'/public/components/header.php'; ?>
+        <section class="titlepage">
+            <h1>Explorez notre Catalogue.</h1>
+            <h2>"Découvrez notre large gamme de catégories 
+                une sélection variée d'options conçues pour répondre à une multitude de besoins dans le domaine de l'informatique."</h2>
+        </section>
+        <hr class="line">
+        <section class="categorie_cards">
+            <?php foreach($categories as $category){ ?>
+                <h2><?=  htmlspecialchars ($category['Device_category_name']); ?></h2>
+                <div class="cards">
+                    
+                    <?php foreach($subCategories[$category['Device_category_id']] as $subCategory){ ?>
+                        <div id="cardCategorie">
+                            <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>" >
+                            <div class="image"></div>
+                            <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>">
+                            <h3><?= htmlspecialchars($subCategory['Device_SubCategory_Name']); ?>
+                            
+                            
+                        </div>
+                    <?php } ?>
+                </div>
                 
-                <?php foreach($subCategories[$category['Device_category_id']] as $subCategory){ ?>
-                    <div id="cardCategorie">
-                        <div class="image"></div>
-                        <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>">
-                        <h3><?= htmlspecialchars($subCategory['Device_SubCategory_Name']); ?>
-                        
-                        
-                    </div>
-                <?php } ?>
-            </div>
-            
-        <?php } ?> 
-    </section>
+            <?php } ?> 
+        </section>
+</body>
     <?php require __ROOT__ .'/public/components/footer.php'; ?>
