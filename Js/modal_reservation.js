@@ -1,40 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let modal = document.querySelector('.modal');
+    let modal = document.getElementById('bookingModal');
     let modalOverlay = document.querySelector('.modal-overlay');
-    let modalButtons = document.querySelectorAll('.open-modal-btn');
+    let modalElements = document.querySelectorAll('.open-modal-div');
     let modalClose = document.querySelector('.modal .close');
     let modalProductId = document.getElementById('modalProductId');
     let modalUserId = document.getElementById('modalUserId');
 
-    modalButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            let productId = button.dataset.productId;
-            let userId = button.dataset.userId;
+    modalElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+            let productId = element.dataset.productId;
+            let userId = element.dataset.userId;
 
-            // Aggiorna il contenuto del modal con i dati del prodotto e dell'utente
-            modalProductId.textContent = productId;
-            modalUserId.textContent = userId;
+            // Met à jour le contenu du modal avec les données du produit et de l'utilisateur
+            if (modalProductId && modalUserId) {
+                modalProductId.textContent = productId;
+                modalUserId.textContent = userId;
+            } else {
+                console.error('Les éléments pour les données du produit et de l\'utilisateur n\'ont pas été trouvés.');
+            }
 
-            // Mostra il modal e l'overlay
+            // Affiche le modal et l'overlay
             modal.style.display = 'block';
             modalOverlay.style.display = 'block';
         });
     });
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     var modalButtons = document.querySelectorAll('.open-modal-btn');
-//     modalButtons.forEach(function (button) {
-//         button.addEventListener('click', function () {
-//             var productId = button.dataset.productId;
-//             var userId = button.dataset.userId;
-//             console.log('Product ID:', productId);
-//             console.log('User ID:', userId);
-//             // Continua con il resto della logica
-//         });
-//     });
-
-
-    // Chiudi il modal se si clicca sul pulsante di chiusura o sull'overlay
+    // Ferme le modal si l'on clique sur le bouton de fermeture ou sur l'overlay
     modalClose.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', closeModal);
 
@@ -42,65 +33,32 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = 'none';
         modalOverlay.style.display = 'none';
     }
-
-    // Gestione dell'invio del form di prenotazione
-    let bookingForm = document.getElementById('bookingForm');
-    bookingForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita il comportamento di default del form
-
-        let start_reservation = document.getElementById('start_reservation').value;
-        let end_reservation = document.getElementById('end_reservation').value;
-        
-        
-
-        // Esempio di invio dei dati al server in formato JSON tramite fetch API
-        let requestData = {
-            productId: modalProductId.textContent,
-            userId: modalUserId.textContent,
-            start_reservation: start_reservation,
-            end_reservation: end_reservation
-        };
-
-        console.log('Dati inviati al server:', requestData);
-
-        fetch(' /public/process_booking.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Errore HTTP, stato ' + response.status);
-                }
-                return response.text(); // Otteniamo la risposta come testo
-            })
-            .then(text => {
-                console.log('Risposta ricevuta dal server:', text); // Log della risposta testuale
-
-                if (text.trim() === "") {
-                    throw new Error('Risposta vuota dal server');
-                }
-
-                try {
-                    const data = JSON.parse(text); // Tentiamo di parare il testo come JSON
-                    console.log(data);
-                    closeModal();
-                    if (data.success) {
-                        alert('Prenotazione registrata con successo!');
-                    } else {
-                        alert('Errore durante la registrazione della prenotazione: ' + data.message);
-                    }
-                } catch (error) {
-                    console.error('Errore nel parsing JSON:', error, text);
-                    alert('Errore durante la registrazione della prenotazione.');
-                }
-            })
-            .catch(error => {
-                console.error('Errore durante l\'invio della prenotazione:', error);
-                alert('Errore durante l\'invio della prenotazione.');
-            });
-
-    });
 });
+
+
+function updateDateDisplay() {
+    const startInput = document.getElementById('start_reservation').value;
+    const endInput = document.getElementById('end_reservation').value;
+
+    // Vérifie si les deux dates ont été sélectionnées
+    if (startInput && endInput) {
+        const startDate = new Date(startInput);
+        const endDate = new Date(endInput);
+
+        // Calcule la différence en millisecondes entre les deux dates
+        const diffInMs = endDate - startDate;
+
+        // Convertit la différence de millisecondes en jours
+        const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+
+        // Affiche la durée en jours
+        document.getElementById('result').textContent =
+            `La durée de la réservation est de ${diffInDays} jours.`;
+    } else {
+        document.getElementById('result').textContent = 'Veuillez sélectionner les deux dates.';
+    }
+}
+
+// Ajoute des événements de changement aux champs de saisie
+document.getElementById('start_reservation').addEventListener('change', updateDateDisplay);
+document.getElementById('end_reservation').addEventListener('change', updateDateDisplay);

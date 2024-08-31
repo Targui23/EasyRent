@@ -153,3 +153,46 @@ a:visited {
 .modal-content h2 {
     margin-top: 0;
 }
+
+.open-modal-div {
+    display: inline-block;
+    width: 300px;
+    padding: 12px 24px;
+    background-color: #FF8C00;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.open-modal-div:hover {
+    background-color: #B25800;
+}
+
+.invitation-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.invitation-container h3,
+.invitation-container p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.invitation-container h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.invitation-container p {
+    font-size: 20px;
+}

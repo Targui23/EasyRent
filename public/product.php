@@ -26,11 +26,8 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
     $stmt2->execute();
     $row = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-    session_start();
-    
+    // session_start();
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +38,6 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
     <link rel="stylesheet" href="../css/productstyle.css">
     <link href="/assets/css/fontawesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
-    
-   
 </head>
 
 <body>
@@ -54,7 +49,7 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
                 <div id="cardCategorie">
                     <a href=""></a>
                     <div class="image">
-                        <img src="<?= htmlspecialchars($devices['Device_image']); ?>" alt="phto of product" >
+                        <img src="<?= htmlspecialchars($devices['Device_image']); ?>" alt="photo of product" >
                     </div>
                     <div class="product_left_side">
                         <h2><?= htmlspecialchars($devices['Device_brand_name']); ?> <?= htmlspecialchars($devices['Device_model_name']); ?></h2>
@@ -73,40 +68,39 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
                                 <i class="fa-solid fa-building"></i>
                                 <p>Retrait uniquement sur site</p>
                             </span>
-
-
                         </div>
                         <?php 
-                           
                             if(isset($_SESSION['user_connected']) && $_SESSION['user_connected'] == 'ok'){
                         ?>
-                            <h3>louer dès maintenant!</h3>
-                           <button class="open-modal-btn" data-product-id="<?php echo htmlspecialchars($_GET['dm_id']); ?>" data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">Affitta questo prodotto</button
-
-
-
-                            <!-- Modal nascosto -->
-                            <div class="modal" id="bookingModal">
-                                <div class="modal-content">
-                                    <span class="close">&times;</span>
-                                    <h2>Prenota questo prodotto</h2>
-                                    <p>Prodotto ID: <span id="modalProductId"></span></p>
-                                    <p>Utente ID: <span id="modalUserId"></span></p>
-                                    <form id="bookingForm" method="post">
-                                        <label for="bookingDate">Seleziona la data di prenotazione:</label>
-                                        <input type="date" id="start_reservation" name="start_reservation" required>
-                                        <input type="date" id="end_reservation" name="end_reservation" required>
-                                        <button type="submit">Prenota</button>
-                                    </form>
+                                <div class="invitation-container">
+                                    <h3>Ne manquez pas cette opportunité !</h3>
+                                    <p>Louer dès maintenant!</p>
                                 </div>
-                            </div>
+                                <div class="open-modal-div" data-product-id="<?php echo htmlspecialchars($_GET['dm_id']); ?>" data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">Affitta questo prodotto</div>
+                                <!-- Modale nascosto -->
+                                <div class="modal" id="bookingModal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Prenota questo prodotto</h2>
+                                        <p>Prodotto ID: <span id="modalProductId"></span></p>
+                                        <p>Utente ID: <span id="modalUserId"></span></p>
+                                        <form id="bookingForm" method="post" action="process_booking.php">
+                                            <label for="start_reservation">Seleziona la data di prenotazione:</label>
+                                            <input type="date" id="start_reservation" name="start_reservation" required>
+                                            <label for="end_reservation">Seleziona la data di fine prenotazione:</label>
+                                            <input type="date" id="end_reservation" name="end_reservation" required>
+                                            <div class="result" id="result"></div>
+                                            <input type="hidden" class="result" id="result" name="product_id" value='<div class="result" id="result"></div>'>
 
-                            <!-- Copertura sfondo modale -->
-                            <div class="modal-overlay"></div>
-
-                                                        
-
-
+                                            <option value=""></option>
+                                            <input type="hidden" id="product_id" name="product_id" value="<?php echo htmlspecialchars($_GET['dm_id']); ?>">
+                                            <input type="hidden" id="user_id" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
+                                            <button type="submit">Prenota</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- Copertura sfondo modale -->
+                                <div class="modal-overlay"></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -115,9 +109,7 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
             <div class="product_description">
                 <h3>Description</h3>
                 <p><?= htmlspecialchars($devices['Device_description']); ?></p>
-
             </div>
-
             <div>
                 <h3>Caractéristiques</h3>
                 <?php if(isset($row) && !empty($row)) { ?>
@@ -147,3 +139,4 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
 </body>
 
 <script src="../js/modal_reservation.js"></script>
+</html>
