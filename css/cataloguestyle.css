@@ -52,22 +52,25 @@ a:visited {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* gap: 20px; */
+    gap: 20px;
     flex-wrap: wrap;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 20px;
     margin-bottom: 40px;
+    border-radius: 10px;
 }
 
 #cardCategorie {
-    border: 1px solid black;
+    border: 1px solid rgb(216, 125, 7);
     width: 250px;
-    height: 400px;
+    height: 200px;
     text-align: center;
-    background-image: url('../img/cafer-mert-ceyhan-LAY19dUD_ro-unsplash.jpg');
+    /* background-image: url('../img/cafer-mert-ceyhan-LAY19dUD_ro-unsplash.jpg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: rgb(216, 125, 7);
+    
     /* z-index: -1; */
     /* margin: 10px;  */
     /* padding: 20px; */
@@ -75,11 +78,13 @@ a:visited {
 
 }
 
-#cardCategorie.image {
-    
-    width: auto;
+#cardCategorie .image img {
+    /* padding-top: 10px; */
+    width: 100%;
     height: 100px;
     background-size: 100%;
+    
+    
 }
 
 
@@ -89,3 +94,293 @@ h2{
     align-items: center;
 } 
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+    body {
+            background: rgb(219, 219, 219);
+            margin: 0;
+    
+            width: auto;
+        }
+    
+        a {
+            text-decoration: none;
+    
+        }
+    
+        a:visited {
+            color: inherit;
+            /* Usa lo stesso colore del testo del link normale */
+        }
+    
+    
+        .titlepage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+            font-size: 14px;
+    
+    
+        }
+    
+        .select {
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+        }
+    
+        .input {
+            border-radius: 10px;
+            width: 250px;
+            height: 30px;
+    
+        }
+    
+    
+    
+        .titlehero {
+            color: white;
+            text-transform: uppercase;
+        }
+    
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+            margin: 20px;
+            margin-bottom: 40px;
+        }
+    
+        #cardCategorie {
+            border: 1px solid rgb(216, 125, 7);
+            width: 180px;
+            height: 200px;
+            text-align: center;
+            /* background-image: url('../img/cafer-mert-ceyhan-LAY19dUD_ro-unsplash.jpg'); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(216, 125, 7);
+            /* z-index: -1; */
+            /* margin: 10px;  */
+            /* padding: 20px; */
+            /* margin-bottom: 40px; */
+    
+        }
+    
+        #cardCategorie.image {
+    
+            width: 100%;
+            height: 100px;
+            background-size: 100%;
+        }
+    
+    
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+            background: rgb(219, 219, 219);
+            margin: 0;
+    
+            width: auto;
+        }
+    
+        a {
+            text-decoration: none;
+    
+        }
+    
+        a:visited {
+            color: inherit;
+            /* Usa lo stesso colore del testo del link normale */
+        }
+    
+    
+        .titlepage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+            font-size: 12px;
+    
+    
+        }
+    
+        .select {
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+        }
+    
+        .input {
+            border-radius: 10px;
+            width: 250px;
+            height: 30px;
+    
+        }
+    
+    
+    
+        .titlehero {
+            color: white;
+            text-transform: uppercase;
+        }
+    
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+            margin: 20px;
+            margin-bottom: 40px;
+        }
+    
+        #cardCategorie {
+            border: 1px solid rgb(216, 125, 7);
+            width: 180px;
+            height: 200px;
+            text-align: center;
+            /* background-image: url('../img/cafer-mert-ceyhan-LAY19dUD_ro-unsplash.jpg'); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(216, 125, 7);
+            /* z-index: -1; */
+            /* margin: 10px;  */
+            /* padding: 20px; */
+            /* margin-bottom: 40px; */
+    
+        }
+    
+        #cardCategorie.image {
+    
+            width: 100%;
+            height: 100px;
+            background-size: 100%;
+        }
+    
+    
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+}
+
+@media (max-width: 767px) {
+    body {
+            background: rgb(219, 219, 219);
+            margin: 0;
+    
+            width: auto;
+        }
+    
+        a {
+            text-decoration: none;
+    
+        }
+    
+        a:visited {
+            color: inherit;
+            /* Usa lo stesso colore del testo del link normale */
+        }
+    
+    
+        .titlepage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+            font-size: 12px;
+    
+    
+        }
+    
+        .select {
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+        }
+    
+        .input {
+            border-radius: 10px;
+            width: 250px;
+            height: 30px;
+    
+        }
+    
+    
+    
+        .titlehero {
+            color: white;
+            text-transform: uppercase;
+        }
+    
+        .cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+            margin: 20px;
+            margin-bottom: 40px;
+        }
+    
+        #cardCategorie {
+            border: 1px solid rgb(216, 125, 7);
+            width: 100%;
+            height: 110px;
+            text-align: center;
+            /* background-image: url('../img/cafer-mert-ceyhan-LAY19dUD_ro-unsplash.jpg'); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(216, 125, 7);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            /* align-items: center; */
+            margin: 0;
+            
+            /* z-index: -1; */
+            /* margin: 10px;  */
+            /* padding: 20px; */
+            /* margin-bottom: 40px; */
+    
+        }
+    
+        #cardCategorie.image {
+    
+            width: 100%;
+            height: 100px;
+            background-size: 100%;
+        }
+    
+    
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+}

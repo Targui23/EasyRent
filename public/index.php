@@ -72,10 +72,10 @@
     </section> 
     <section class="punchline">
         <div class="punchlinet">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat</h2>
+            <h2>"La technologie que vous voulez, quand vous la voulez. Sans compromis."</h2>
         </div>
         <div class="punchlinep">
-            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt soluta fugiat,</h3>
+            <h3>Louez aujourd'hui, innovez demain.</h3>
         </div>
         <div></div>
     </section> 
@@ -88,8 +88,10 @@
                     <?php } ?>
                 </select>
             </div>
-                <div>
+                <div class="input">
                     <input type="search" class="input">
+                </div>
+                <div class="button">
                     <input type="submit" class="enter"></input>
                 </div>
         </div>
@@ -181,20 +183,17 @@
             <h2>"Easy Rent,</h2>
             <h3> où la qualité de service se traduit par une expérience impeccable et satisfaisante dans la location de produits informatiques."</h3>
         </span>
-        <img src="/img/photo_accueil/happyclient.jpg" alt="happy client " style="width : 500px; height: 300px; ">
+        <img src="/img/photo_accueil/happyclient.jpg" alt="happy client " loading="lazy" >
     </div>
     <div class="who_we_are">
-        <img src="/img/photo_accueil/who_we_are.jpg" alt="happy client " style="width : 400px; height: 250px; ">
+        <img src="/img/photo_accueil/who_we_are.jpg" alt="happy client " loading="lazy" >
         <span>
             <h2>Qui sommes-nous</h2>
             <h3>Easy Rent : 
-                votre référence depuis 2010 pour accéder au meilleur de la technologie sans barrières. 
-                Nous sommes une équipe de passionnés, engagés à transformer la manière dont vous vivez et travaillez 
-                avec les dispositifs électroniques. Qu'il s'agisse d'ordinateurs, de smartphones, de tablettes ou de 
-                périphériques avancés, notre mission est de démocratiser l'accès aux technologies les plus récentes 
-                avec des solutions de location flexibles et accessibles. Nous ne voulons pas seulement vous fournir 
-                un produit, mais vous offrir une expérience extraordinaire, vous permettant d'explorer, d'innover et 
-                de grandir sans limitations.
+                Depuis 2010, Easy Rent facilite l'accès à la technologie en offrant des solutions
+                 de location flexibles pour ordinateurs, smartphones, tablettes et périphériques. 
+                 Notre mission est de vous fournir bien plus qu'un produit : une expérience unique 
+                 pour innover et grandir sans limites.
             </h3>
         </span>
     </div>
@@ -202,53 +201,38 @@
         <span>
             <h2>Notre offre</h2>
             <h3>
-                Imaginez un monde où la technologie n'a pas de frontières, 
-                où vous pouvez toujours avoir à votre disposition le dispositif 
-                adéquat pour vos besoins, sans le poids des coûts initiaux exorbitants. 
-                Easy Rent rend tout cela possible avec une gamme incroyable de produits, 
-                des ordinateurs portables puissants pour le travail créatif aux tablettes 
-                pour l'apprentissage et la communication. Notre offre ne se limite pas à 
-                vous fournir les outils les plus avancés, mais comprend également un service 
-                client d'excellence et un support technique constant. Chaque solution que nous
-                proposons est conçue pour être flexible et personnalisable, afin que vous puissiez 
-                vous concentrer sur ce qui compte vraiment, pendant que nous nous occupons du reste.
-                Avec Easy Rent, la technologie devient un allié sans compromis.
+                Imaginez un monde où la technologie est accessible sans contraintes. Easy Rent propose 
+                une large gamme de produits adaptés à vos besoins, sans coûts initiaux. Profitez d'outils 
+                avancés, d'un service client exceptionnel et d'un support continu. Nos solutions flexibles 
+                vous permettent de vous concentrer sur l'essentiel. Easy Rent, votre allié technologique.
             </h3>
         </span>
-        <img src="/img/photo_accueil/equipement_informatique" alt="happy client " style="width : 300px; height: 400px; ">
+        <img src="/img/photo_accueil/equipement_informatique" alt="happy client " loading="lazy">
        
     </div>
     <div class="our_mission">
-        <img src="/img/photo_accueil/mission" alt="happy client " style="width : 500px; height: 300px; ">
+        <img src="/img/photo_accueil/mission" alt="happy client " loading="lazy">
         <span>
             <h2>Notre mission</h2>
-            <h3>Chez Easy Rent, notre engagement va au-delà de l'offre de technologies de pointe. Nous sommes profondément convaincus que l'avenir 
-                de la planète dépend des choix que nous faisons aujourd'hui. C'est pourquoi nous nous engageons activement dans des initiatives de 
-                durabilité environnementale, telles que le recyclage et la réduction des déchets électroniques, prolongeant ainsi la durée de vie des 
-                dispositifs. Nous collaborons avec des partenaires écologiques pour assurer que nos produits soient éliminés de manière responsable et
-                durable. Mais notre engagement ne s'arrête pas là : nous soutenons également des initiatives sociales pour réduire la fracture numérique,
-                en faisant don de matériel reconditionné aux écoles et aux communautés défavorisées. Nous sommes convaincus que chaque location avec Easy Rent 
-                est un pas vers un monde plus équitable et durable. Avec notre approche basée sur la transparence et la responsabilité, nous travaillons pour 
-                garantir un impact positif à long terme, tant pour nos clients que pour l'environnement. Rejoignez-nous et faites partie d'une communauté qui croit 
-                en la technologie comme une force motrice pour un changement positif.
-            </h3>
+            <h4>Chez Easy Rent, nous allons au-delà de la technologie en adoptant des pratiques durables. 
+                Nous recyclons, réduisons les déchets électroniques et prolongeons la vie des dispositifs. 
+                En partenariat avec des acteurs écologiques, nous éliminons les produits de manière responsable 
+                et offrons du matériel reconditionné aux écoles et communautés défavorisées. Chaque location avec
+                 Easy Rent contribue à un monde plus équitable et durable.
+            </h4>
         </span>
     </div>
     <div class="our_work">
         <span>
             <h2>Notre travail</h2>
-            <h4>Chez Easy Rent, notre façon de travailler est orientée vers la recherche constante de la meilleure solution pour nos clients, 
-                en trouvant le parfait équilibre entre prix et qualité. Nous sommes conscients que chaque besoin est unique et c'est pourquoi
-                nous nous engageons à offrir des propositions personnalisées qui répondent aux nécessités spécifiques de chaque client. Grâce
-                à une analyse attentive et une sélection rigoureuse des produits, nous garantissons des dispositifs technologiques à la pointe 
-                de la technologie à des tarifs compétitifs, sans compromis sur la qualité. Notre philosophie repose sur l'écoute et la collaboration 
-                : nous travaillons en étroite collaboration avec nos clients pour comprendre leurs réels besoins et fournir des solutions qui améliorent 
-                leur expérience technologique. Nous visons l'excellence non seulement dans les produits, mais aussi dans le service, en assurant une assistance
-                dédiée et un support continu pour rendre la location une expérience simple et satisfaisante. Avec Easy Rent, vous avez un partenaire qui travaille 
-                à vos côtés pour vous offrir toujours le meilleur.
+            <h4>Chez Easy Rent, nous allons au-delà de la technologie. Engagés pour un avenir durable,
+                 nous recyclons, réduisons les déchets électroniques et prolongeons la vie des dispositifs. 
+                 Avec des partenaires écologiques, nous éliminons les produits de manière responsable et offrons 
+                 du matériel reconditionné aux écoles et communautés défavorisées. Chaque location avec Easy Rent 
+                 soutient un monde plus durable et équitable.
             </h4>
         </span>
-        <img src="/img/photo_accueil/our_work" alt="happy client " style="width : 500px; height: 300px; ">
+        <img class=""src="/img/photo_accueil/our_work" alt="happy client " loading="lazy" >
     </div>
 </section>
 <hr class="line">
@@ -286,10 +270,10 @@
         </span>
     </div>
     <div class="contact_location">
-        <div>
+        <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.940963818931!2d6.173874175429574!3d49.106761983197124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794dd50b1aeb723%3A0x3f41549215e3dc57!2sMetz%20Numeric%20School!5e0!3m2!1sfr!2sfr!4v1718788919623!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div>
+        <div class="info">
             <h2>Contact</h2>
             <p>13 Rue des Clercs<br>57000 Metz, France <br>easyrent@info.com <br>(+33) 06-33-23-78-99  </p>
             <p>57000 Metz, France</p>
@@ -299,12 +283,6 @@
         </div>
         
     </div>
-
-
-    </div>
-
-    
-      
 
 
 </section>

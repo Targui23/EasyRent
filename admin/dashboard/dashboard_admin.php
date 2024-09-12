@@ -283,14 +283,23 @@
                     <h2><i class="fas fa-calendar-alt"></i> Réservation</h2>
                     <div class="reservation_info">
                         <h3>Toutes les réservation</h3>
-                        <?php foreach($reservations as $reservation){ ?>
-                            <span>
-                                <?php if($reservation['Reservation_accepted'] === NULL && $reservation['Reservation_refused'] === NULL){ ?>
-                                    <p><strong><?= htmlspecialchars($reservation['Reservation_id']); ?> -
-                                    <?= htmlspecialchars($reservation['Customer_firstName']); ?> <?= htmlspecialchars($reservation['Customer_lastName']); ?></strong></p>
+                        
+                            <div class="reservation_conta">
+                                <?php foreach($reservations as $reservation){ ?>
+                                    <?php if($reservation['Reservation_accepted'] === NULL && $reservation['Reservation_refused'] === NULL){ ?>
+                                        <p><strong><?= htmlspecialchars($reservation['Reservation_id']); ?> -
+                                        <?= htmlspecialchars($reservation['Customer_firstName']); ?> <?= htmlspecialchars($reservation['Customer_lastName']); ?></strong></p>
+
+                                        <div class="buttons">
+                                            <button class="btn_view" >
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    <?php } ?>
                                 <?php } ?>
-                            </span>
-                       <?php } ?>
+                            </div>
+                            
+                       
                     </div>
 
                     <div class="reservation_info">

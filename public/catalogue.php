@@ -56,14 +56,18 @@
                 <div class="cards">
                     
                     <?php foreach($subCategories[$category['Device_category_id']] as $subCategory){ ?>
-                        <div id="cardCategorie">
-                            <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>" >
-                            <div class="image"></div>
-                            <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>">
-                            <h3><?= htmlspecialchars($subCategory['Device_SubCategory_Name']); ?>
-                            
-                            
-                        </div>
+                        
+                            <div id="cardCategorie">
+                                <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>" >
+                                <div class="image">
+                                    <img src="/img/catalogue/<?= htmlspecialchars($subCategory['Device_SubCategory_Name']); ?>.jpg" alt="" loading="lazy">
+                                </div>
+                                <a href="liste_produits.php?SC_id=<?= $subCategory['Device_SubCategory_id']; ?>">
+                                <h3><?= htmlspecialchars($subCategory['Device_SubCategory_Name']); ?>
+                                
+                                
+                            </div>
+                        
                     <?php } ?>
                 </div>
                 

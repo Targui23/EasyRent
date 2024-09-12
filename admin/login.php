@@ -258,9 +258,7 @@
             <div class="signup_link signup_link-Créez">
                 <span></span>
                 <label>Pas de compte ? Contactez l'administrateur !</label>
-                <a id="
-
-contact" href="contact.php">Contact</a>
+                <a id="contact" href="contact.php">Contact</a>
             </div>
         </form>
     </div>

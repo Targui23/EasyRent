@@ -26,7 +26,7 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
     $stmt2->execute();
     $row = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-    // session_start();
+   
 }
 ?>
 <!DOCTYPE html>
@@ -76,18 +76,19 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
                                     <h3>Ne manquez pas cette opportunité !</h3>
                                     <p>Louer dès maintenant!</p>
                                 </div>
-                                <div class="open-modal-div" data-product-id="<?php echo htmlspecialchars($_GET['dm_id']); ?>" data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">Affitta questo prodotto</div>
-                                <!-- Modale nascosto -->
+                                <div class="open-modal-div" data-product-id="<?php echo htmlspecialchars($_GET['dm_id']); ?>" 
+                                data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">Louer le produit </div>
+                               
                                 <div class="modal" id="bookingModal">
                                     <div class="modal-content">
                                         <span class="close">&times;</span>
-                                        <h2>Prenota questo prodotto</h2>
-                                        <p>Prodotto ID: <span id="modalProductId"></span></p>
-                                        <p>Utente ID: <span id="modalUserId"></span></p>
+                                        <h2>Réservez ce produit</h2>
+                                        <p>Produit ID: <span id="modalProductId"></span></p>
+                                        <p>user  ID: <span id="modalUserId"></span></p>
                                         <form id="bookingForm" method="post" action="process_booking.php">
-                                            <label for="start_reservation">Seleziona la data di prenotazione:</label>
+                                            <label for="start_reservation">Sélectionnez la date de réservation</label>
                                             <input type="date" id="start_reservation" name="start_reservation" required>
-                                            <label for="end_reservation">Seleziona la data di fine prenotazione:</label>
+                                            <label for="end_reservation">Sélectionnez la date de fine de réservation:</label>
                                             <input type="date" id="end_reservation" name="end_reservation" required>
                                             <div class="result" id="result"></div>
                                             <input type="hidden" class="result" id="result" name="product_id" value='<div class="result" id="result"></div>'>
@@ -95,7 +96,7 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
                                             <option value=""></option>
                                             <input type="hidden" id="product_id" name="product_id" value="<?php echo htmlspecialchars($_GET['dm_id']); ?>">
                                             <input type="hidden" id="user_id" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
-                                            <button type="submit">Prenota</button>
+                                            <button type="submit">Réservez</button>
                                         </form>
                                     </div>
                                 </div>

@@ -108,7 +108,7 @@ body {
 }
 
 .user-info,
-.product_info {
+.product_info, .reservation_info, .reservation_conta{
     border: 1px solid black;
     width: auto;
     padding: 10px;
@@ -305,6 +305,29 @@ button:hover {
 .btn-cancel-delete-user:hover {
     background-color: #e53935;
 }
+
+ .btn_view {
+    background-color: rgb(20, 54, 163);
+}
+
+.reservation_info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+/* .reservation_conta{
+    border: 1px solid black;
+        width: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+} */
 
 @media (max-width: 768px) {
     .dashboard {
