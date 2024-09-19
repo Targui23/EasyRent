@@ -23,7 +23,7 @@
 </head>
 <body>
     <header class="mainheader">
-        <a href="/public/index.php"><img src="/img/logoo.png" alt="logo header" class="logoheader"></a>
+        <a href="/public/index.php"><img src="/img/logoo.png" alt="logo header" id="logo_header"></a>
         <nav>
             <ul class="top_sidebar">
                 <li><a href="/public/index.php">Accueil</a></li>
@@ -34,6 +34,7 @@
             </ul>
             <ul class="side_bar">
                 <div>
+                    
                     <img src="../img/icon/close_menu.png" alt="Close Menu" class="close_menu" onclick="hidenSideBar()">
                 </div>
                 <li><a href="/public/index.php">Accueil</a></li>

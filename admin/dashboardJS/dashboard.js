@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Sélectionne tous les liens de la barre latérale
-    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    const sidebarLinks = document.querySelectorAll('.sidebar_dash a');
 
     // Ajoute un événement de clic à chaque lien
     sidebarLinks.forEach(link => {
@@ -141,3 +141,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000); // Masque après 5 secondes
     }
 });
+
+
+
+//reservation 
+
+function openModal(modalElement) {
+    modalElement.style.display = "block";
+}
+
+// Fonction pour fermer un modale spécifique
+function closeModal(modalElement) {
+    modalElement.style.display = "none";
+}
+
+// Événement pour ouvrir les modales
+document.querySelectorAll('.btn_view').forEach(button => {
+    button.addEventListener('click', function () {
+        let reservationId = this.getAttribute('data-modal-id');
+        let modalElement = document.querySelector(`.modal[data-reservation-id="${reservationId}"]`);
+        if (modalElement) {
+            openModal(modalElement);
+        }
+    });
+});
+
+// Événement pour fermer les modales
+document.querySelectorAll('.close-modal').forEach(button => {
+    button.addEventListener('click', function () {
+        let modalElement = this.closest('.modal');
+        if (modalElement) {
+            closeModal(modalElement);
+        }
+    });
+});
+
+// Événement pour fermer le modale en cliquant en dehors
+window.addEventListener('click', function (event) {
+    if (event.target.classList.contains('modal')) {
+        closeModal(event.target);
+    }
+});
+
+function toggleCheckbox(clickedId) {
+    const acceptCheckbox = document.getElementById('accept');
+    const refuseCheckbox = document.getElementById('refuse');
+
+    if (clickedId === 'accept') {
+        if (acceptCheckbox.checked) {
+            refuseCheckbox.checked = false;
+            refuseCheckbox.disabled = true; // Disabilita "Refuser" quando "Accepter" è selezionato
+        } else {
+            refuseCheckbox.disabled = false; // Riabilita "Refuser" se "Accepter" viene deselezionato
+        }
+    } else if (clickedId === 'refuse') {
+        if (refuseCheckbox.checked) {
+            acceptCheckbox.checked = false;
+            acceptCheckbox.disabled = true; // Disabilita "Accepter" quando "Refuser" è selezionato
+        } else {
+            acceptCheckbox.disabled = false; // Riabilita "Accepter" se "Refuser" viene deselezionato
+        }
+    }
+}

@@ -100,6 +100,6 @@
     </section>
     <?php require __ROOT__ .'/public/components/footer.php'; ?>
     
-
+    <script src="../js/headerjs.js"></script>
 </body>
 </html>

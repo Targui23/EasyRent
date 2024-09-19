@@ -73,14 +73,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../dashboard_css/dashboard.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
 </head>
 <body>
     <?php require __ROOT__ .'/public/components/header.php'; ?>
 
     <div class="dashboard">
-        <div class="sidebar">
+        <div class="sidebar_dash">
             <h2>Dashboard</h2>
             <ul>
             <?php foreach($rows as $row){ ?>
@@ -257,6 +258,7 @@
                             </button>
 
                         </div>
+
                         <?php foreach($products as $product){ ?>
                             <div class="product_info">
                                 <p><strong><?= htmlspecialchars($product['Device_model_name']); ?></strong></p>
@@ -279,25 +281,68 @@
                         
                     </div>
                 <?php } ?>
+
+
                 <div id="reservations" class="panel">
                     <h2><i class="fas fa-calendar-alt"></i> Réservation</h2>
                     <div class="reservation_info">
                         <h3>Toutes les réservation</h3>
                         
-                            <div class="reservation_conta">
-                                <?php foreach($reservations as $reservation){ ?>
-                                    <?php if($reservation['Reservation_accepted'] === NULL && $reservation['Reservation_refused'] === NULL){ ?>
-                                        <p><strong><?= htmlspecialchars($reservation['Reservation_id']); ?> -
-                                        <?= htmlspecialchars($reservation['Customer_firstName']); ?> <?= htmlspecialchars($reservation['Customer_lastName']); ?></strong></p>
+                            
+                                <?php foreach($reservations as $reservation) { ?>
+                                    <?php if($reservation['Reservation_accepted'] === NULL && $reservation['Reservation_refused'] === NULL) { ?>
+                                        <div class="reservation_user">
+                                            <p><strong><?= htmlspecialchars($reservation['Reservation_id']); ?> -
+                                            <?= htmlspecialchars($reservation['Customer_firstName']); ?> <?= htmlspecialchars($reservation['Customer_lastName']); ?></strong></p>
 
                                         <div class="buttons">
-                                            <button class="btn_view" >
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
+                                                <button class="btn_view" data-modal-id="<?= htmlspecialchars($reservation['Reservation_id']); ?>">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modale pour accepter/refuser la réservation -->
+                                        <div class="modal reservationModal" data-reservation-id="<?= htmlspecialchars($reservation['Reservation_id']); ?>">
+                                            <div class="modal-content">
+                                                <span class="close-modal">&times;</span>
+                                                <h2>Gestion de la Réservation</h2>
+
+                                                <!-- Formulaire dans le modale -->
+                                                <form class="reservationForm" action="reservation.php" metod="post">
+                                                    <label for="reservationNote-<?= htmlspecialchars($reservation['Reservation_id']); ?>"><strong>Note sur la Réservation numero : </strong><?= htmlspecialchars($reservation['Reservation_id']); ?></label>
+                                                    <label for="reservationNote-<?= htmlspecialchars($reservation['Reservation_id']); ?>"><strong>Utilisateur  : </strong><?= htmlspecialchars($reservation['Customer_firstName']); ?> <?= htmlspecialchars($reservation['Customer_lastName']); ?></label>
+                                                    <label for="reservationNote-<?= htmlspecialchars($reservation['Reservation_id']); ?>"><strong>Produit  : </strong><?= htmlspecialchars($reservation['Device_model_name']); ?> </label>
+
+                                                    <label for="reservation_startDate"><strong>Début de réservation</strong></label>
+                                                    <input type="date" name="start_reservation" value="<?= htmlspecialchars($reservation['Reservation_startDate']); ?>">
+
+                                                    <label for="reservation_startDate"><strong>Fin de réservation</strong></label>
+                                                    <input type="date" name="start_reservation" value="<?= htmlspecialchars($reservation['Reservation_endDate']); ?>">
+
+                                                    <label for="checkAvailability">Souhaitez-vous valider la reservation ?</label>
+                                                     
+                                                        <input type="checkbox" id="accept" name="checkAvailability" value="1" onclick="toggleCheckbox('accept')">Accepter
+                                                    
+                                                    
+                                                        <input type="checkbox" id="refuse" name="checkAvailability" value="0" onclick="toggleCheckbox('refuse')">Refuser
+                                                    
+
+                                                    <div class="modal-buttons">
+                                                        <!-- Bouton pour accepter -->
+                                                        
+                                                        <button type="submit" class="accept-btn" data-reservation-id="<?= htmlspecialchars($reservation['Reservation_id']); ?>">Valider</button>
+
+                                                            <!-- Bouton pour refuser -->
+                                                        
+                                                        
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     <?php } ?>
                                 <?php } ?>
-                            </div>
+                           
                             
                        
                     </div>
@@ -333,6 +378,7 @@
         </div>
     </div>
     <script src="../dashboardJS/dashboard.js"></script>
+    <script src=".../js/headerjs.js"></script>
 </body>
 </html>
 

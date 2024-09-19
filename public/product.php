@@ -85,15 +85,13 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
                                         <h2>Réservez ce produit</h2>
                                         <p>Produit ID: <span id="modalProductId"></span></p>
                                         <p>user  ID: <span id="modalUserId"></span></p>
-                                        <form id="bookingForm" method="post" action="process_booking.php">
+                                        <form id="bookingForm" method="POST" action="process_booking.php">
                                             <label for="start_reservation">Sélectionnez la date de réservation</label>
                                             <input type="date" id="start_reservation" name="start_reservation" required>
                                             <label for="end_reservation">Sélectionnez la date de fine de réservation:</label>
                                             <input type="date" id="end_reservation" name="end_reservation" required>
-                                            <div class="result" id="result"></div>
+                                           
                                             <input type="hidden" class="result" id="result" name="product_id" value='<div class="result" id="result"></div>'>
-
-                                            <option value=""></option>
                                             <input type="hidden" id="product_id" name="product_id" value="<?php echo htmlspecialchars($_GET['dm_id']); ?>">
                                             <input type="hidden" id="user_id" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
                                             <button type="submit">Réservez</button>
@@ -138,6 +136,6 @@ if(isset($_GET['dm_id']) && $_GET['dm_id'] > 0){
         <?php require __ROOT__ .'/public/components/footer.php'; ?>
     </footer>
 </body>
-
+<script src="../js/headerjs.js"></script>
 <script src="../js/modal_reservation.js"></script>
 </html>

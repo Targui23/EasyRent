@@ -22,7 +22,7 @@ body {
     overflow: hidden;
 }
 
-.sidebar {
+.sidebar_dash {
     background-color: rgb(20, 33, 61);
     color: rgb(255, 255, 255);
     padding: 20px;
@@ -31,24 +31,24 @@ body {
     gap: 10px;
 }
 
-.sidebar h2 {
+.sidebar_dash h2 {
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 20px;
     color: rgb(255, 255, 255);
 }
 
-.sidebar ul {
+.sidebar_dash ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar ul li {
+.sidebar_dash ul li {
     margin-bottom: 10px;
 }
 
-.sidebar ul li a {
+.sidebar_dash ul li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: flex;
@@ -58,11 +58,11 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.sidebar ul li a i {
+.sidebar_dash ul li a i {
     margin-right: 10px;
 }
 
-.sidebar ul li a:hover {
+.sidebar_dash ul li a:hover {
     background-color: rgb(80, 80, 80);
 }
 
@@ -317,28 +317,117 @@ button:hover {
     justify-content: space-between;
 }
 
-/* .reservation_conta{
+.reservation_conta{
     border: 1px solid black;
         width: auto;
         padding: 10px;
         margin-bottom: 10px;
         border-radius: 50px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-} */
+        justify-content: space-around ;
+}
+.reservation_user{
+    border: 1px solid black;
+    width: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 420px; */
+}
 
+
+/* Style pour le modale spécifique */
+/* Style général pour les modales */
+.modal {
+    display: none;
+    /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fond semi-transparent */
+}
+
+/* Contenu du modale */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; */
+}
+
+.modal-content .reservationForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content .reservationForm input{
+    width: 100px;
+    align-self: center;
+}
+
+/* Bouton pour fermer le modale */
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style pour les boutons du modale */
+.modal-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background-color: #4CAF50;
+    /* Vert */
+    color: white;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    /* Rouge */
+    color: white;
+}
 @media (max-width: 768px) {
     .dashboard {
         grid-template-columns: 1fr;
     }
 
-    .sidebar {
+    /* .sidebar {
         width: 100%;
         order: 2;
         padding: 20px 0;
-    }
+    } */
 
     .main {
         width: 100%;
