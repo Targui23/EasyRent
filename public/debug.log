@@ -1,0 +1,20 @@
+JSON ricevuto: 
+Errore nella decodifica del JSON: Syntax error
+JSON ricevuto: 
+Errore nella decodifica del JSON: Syntax error
+JSON ricevuto: {"productId":"1","userId":"1","satrt_reservation":"2024-07-16","end_reservation":"2024-07-23"}
+array (
+  'productId' => '1',
+  'userId' => '1',
+  'satrt_reservation' => '2024-07-16',
+  'end_reservation' => '2024-07-23',
+)
+JSON ricevuto: 
+Errore nella decodifica del JSON: Syntax error
+JSON ricevuto: {"productId":"1","userId":"1","satrt_reservation":"2024-07-16","end_reservation":"2024-07-23"}
+array (
+  'productId' => '1',
+  'userId' => '1',
+  'satrt_reservation' => '2024-07-16',
+  'end_reservation' => '2024-07-23',
+)

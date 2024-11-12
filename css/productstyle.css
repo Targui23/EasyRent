@@ -1,0 +1,839 @@
+body{
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:visited {
+    color: inherit;
+    /* Usa lo stesso colore del testo del link normale */
+}
+.fiche_product{
+    
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;  
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.product_topside{
+    display: flex;
+    /* border: solid 1px black; */
+    height: auto;
+}
+
+#cardCategorie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+}
+
+.fiche_product  img{
+    width: 500px;
+    width: 500px;
+    display: flex;
+    align-items: flex-start;
+    
+    
+}
+
+.product_left_side{
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /* border: solid 1px black; */
+    margin-top: 50px;
+
+}
+
+.product_left_side h2{
+    margin: 5px;
+    /* padding-top: 20px; */
+}
+
+
+.product_service{
+    margin-bottom: 20px;
+    
+}
+
+.product_service span{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    align-items: center;
+    border: solid black 1px;
+    width: 300px;
+    height: auto;
+    padding-inline-start: 10px;
+    margin: 20px;
+    
+   
+    
+    
+}
+
+.product_service span i{
+    padding-right: 15px;
+    size: 40px;
+}
+
+.product_description{
+    text-align: left;
+    padding: 20px;
+    font-size: 15px ;
+    
+   
+}
+
+.carateristic_tablle{
+    width: 1000px;
+}
+
+
+
+/* Stili per il modal e l'overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.open-modal-div {
+    display: inline-block;
+    width: 300px;
+    padding: 12px 24px;
+    background-color: #FF8C00;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.open-modal-div:hover {
+    background-color: #B25800;
+}
+
+.invitation-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.invitation-container h3,
+.invitation-container p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.invitation-container h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.invitation-container p {
+    font-size: 20px;
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    body {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+    a:visited {
+        color: inherit;
+        /* Usa lo stesso colore del testo del link normale */
+    }
+
+    .fiche_product {
+
+        border: 1px solid black;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .product_topside {
+        display: flex;
+        /* border: solid 1px black; */
+        height: auto;
+    }
+
+    #cardCategorie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .fiche_product img {
+        width: 500px;
+        width: 500px;
+        display: flex;
+        align-items: flex-start;
+
+
+    }
+
+    .product_left_side {
+        width: 350px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        /* border: solid 1px black; */
+        margin-top: 50px;
+
+    }
+
+    .product_left_side h2 {
+        margin: 5px;
+        /* padding-top: 20px; */
+    }
+
+
+    .product_service {
+        margin-bottom: 20px;
+
+    }
+
+    .product_service span {
+        display: flex;
+        flex-direction: row;
+        background-color: aliceblue;
+        align-items: center;
+        border: solid black 1px;
+        width: 300px;
+        height: auto;
+        padding-inline-start: 10px;
+        margin: 20px;
+
+
+
+
+    }
+
+    .product_service span i {
+        padding-right: 15px;
+        size: 40px;
+    }
+
+    .product_description {
+        text-align: left;
+        padding: 20px;
+        font-size: 15px;
+        width: 100%;
+
+
+    }
+
+    .carateristic_tablle {
+        width: 850px;
+    }
+
+    tbody{
+        width: 100%;
+    }
+
+
+    /* Stili per il modal e l'overlay */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: none;
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        max-width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+        display: none;
+    }
+
+    .modal-content {
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .modal-content h2 {
+        margin-top: 0;
+    }
+
+    .open-modal-div {
+        display: inline-block;
+        width: 300px;
+        padding: 12px 24px;
+        background-color: #FF8C00;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .open-modal-div:hover {
+        background-color: #B25800;
+    }
+
+    .invitation-container {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .invitation-container h3,
+    .invitation-container p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+    }
+
+    .invitation-container h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .invitation-container p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+            margin: 0;
+            font-size: 14px;
+        }
+    
+        a {
+            text-decoration: none;
+    
+        }
+    
+        a:visited {
+            color: inherit;
+            /* Usa lo stesso colore del testo del link normale */
+        }
+    
+        .fiche_product {
+    
+            border: 1px solid black;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            text-align: center;
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+    
+        .product_topside {
+            display: flex;
+            /* border: solid 1px black; */
+            height: auto;
+        }
+    
+        #cardCategorie {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 20px;
+            padding: 10px;
+        }
+    
+        .fiche_product img {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+    
+    
+        }
+    
+        .product_left_side {
+            width: 350px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            /* border: solid 1px black; */
+            margin-top: 50px;
+    
+        }
+    
+        .product_left_side h2 {
+            margin: 5px;
+            /* padding-top: 20px; */
+        }
+    
+    
+        .product_service {
+            margin-bottom: 20px;
+            width: 200px;
+    
+        }
+    
+        .product_service span {
+            display: flex;
+            flex-direction: row;
+            background-color: aliceblue;
+            align-items: center;
+            border: solid black 1px;
+            width: 180px;
+            height: auto;
+            padding-inline-start: 10px;
+            margin: 20px;
+    
+    
+    
+    
+        }
+    
+        .product_service span i {
+            padding-right: 15px;
+            size: 30px;
+        }
+    
+        .product_description {
+            text-align: left;
+            padding: 20px;
+            font-size: 15px;
+            width: 100%;
+    
+    
+        }
+    
+        .carateristic_tablle {
+            width: 550px;
+        }
+    
+        /* tbody {
+            width: 100%;
+        } */
+    
+    
+        /* Stili per il modal e l'overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+    
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            display: none;
+        }
+    
+        .modal-content {
+            position: relative;
+        }
+    
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    
+        .modal-content h2 {
+            margin-top: 0;
+        }
+    
+        .open-modal-div {
+            display: inline-block;
+            width: 300px;
+            padding: 12px 24px;
+            background-color: #FF8C00;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    
+        .open-modal-div:hover {
+            background-color: #B25800;
+        }
+    
+        .invitation-container {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 350px;
+            margin-bottom: 20px;
+        }
+    
+        .invitation-container h3,
+        .invitation-container p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+    
+        .invitation-container h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    
+        .invitation-container p {
+            font-size: 20px;
+        }
+}
+
+@media (max-width: 767px) {
+    body {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+    a:visited {
+        color: inherit;
+        /* Usa lo stesso colore del testo del link normale */
+    }
+
+    /* h3, p{
+        font-size: 10px;
+    } */
+
+    .fiche_product {
+
+        /* border: 1px solid black; */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .product_topside {
+        display: flex;
+        flex-direction: column;
+        /* border: solid 1px black; */
+        height: auto;
+    }
+
+    #cardCategorie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        /* padding: 10px; */
+    }
+
+    .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+
+    .fiche_product img {
+        width: 50%;
+        display: flex;
+        align-items: center;
+
+
+
+    }
+
+    .product_left_side {
+        width: 350px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        /* border: solid 1px black; */
+        /* margin-top: 50px; */
+
+    }
+
+    .product_left_side h2 {
+        margin: 5px;
+        /* padding-top: 20px; */
+    }
+
+
+    .product_service {
+        margin-bottom: 20px;
+
+
+    }
+
+    .product_service span {
+        display: flex;
+        flex-direction: row;
+        background-color: aliceblue;
+        align-items: center;
+        border: solid black 1px;
+        width: 200px;
+        height: auto;
+        padding-inline-start: 10px;
+        margin: 20px;
+
+
+
+
+    }
+
+    .product_service span i {
+        padding-right: 15px;
+        size: 30px;
+    }
+
+    .product_description {
+        text-align: left;
+        padding: 20px;
+        font-size: 15px;
+        width: 100%;
+
+
+    }
+
+    .carateristic_tablle {
+        width: 250px;
+    }
+
+    /* tbody {
+            width: 100%;
+        } */
+
+
+    /* Stili per il modal e l'overlay */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: none;
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        width: 100%;
+        max-height: 80%;
+        overflow-y: auto;
+        display: none;
+        /* display: flex;
+        flex-direction: column; */
+    }
+
+    #bookigForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .modal-content {
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .modal-content h2 {
+        margin-top: 0;
+    }
+
+    .open-modal-div {
+        display: inline-block;
+        width: 200px;
+        padding: 12px 24px;
+        background-color: #FF8C00;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .open-modal-div:hover {
+        background-color: #B25800;
+    }
+
+    .invitation-container {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .invitation-container h3,
+    .invitation-container p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+    }
+
+    .invitation-container h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .invitation-container p {
+        font-size: 15px;
+    }
+}

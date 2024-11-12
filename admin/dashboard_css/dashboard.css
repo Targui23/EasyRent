@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar_dash {
+    background-color: rgb(20, 33, 61);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar_dash h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.sidebar_dash ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar_dash ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar_dash ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar_dash ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar_dash ul li a:hover {
+    background-color: rgb(80, 80, 80);
+}
+
+.main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.panel {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top_panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.panel h2 {
+    font-size: 1.6rem;
+    color: rgb(51, 51, 51);
+    margin-bottom: 10px;
+}
+
+.panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.user-info,
+.product_info, .reservation_info, .reservation_conta{
+    border: 1px solid black;
+    width: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-info p {
+    margin: 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+.btn-delete {
+    background-color: #f44336;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modif_user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.modif_user input {
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    border: 1px solid #FCA311;
+    padding-left: 5px;
+}
+
+.modif_user input:focus {
+    outline: none;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-user-btn,
+.add-product-btn {
+    background-color: #FCA311;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-user-btn:hover {
+    background-color: #e09e2d;
+    transform: scale(1.05);
+}
+
+.add-user-btn i {
+    font-size: 20px;
+}
+
+.close_form {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_form:hover,
+.close_form:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.banner {
+    display: none;
+    padding: 10px;
+    color: white;
+    background-color: green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+.modal-delete-user {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: start;
+    justify-content: center;
+}
+
+.modal-content-delete-user {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.btn-confirm-delete-user,
+.btn-cancel-delete-user {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+}
+
+.btn-confirm-delete-user {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-cancel-delete-user {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-confirm-delete-user:hover {
+    background-color: #45a049;
+}
+
+.btn-cancel-delete-user:hover {
+    background-color: #e53935;
+}
+
+ .btn_view {
+    background-color: rgb(20, 54, 163);
+}
+
+.reservation_info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.reservation_conta{
+    border: 1px solid black;
+        width: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around ;
+}
+.reservation_user{
+    border: 1px solid black;
+    width: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 420px; */
+}
+
+
+/* Style pour le modale spécifique */
+/* Style général pour les modales */
+.modal {
+    display: none;
+    /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fond semi-transparent */
+}
+
+/* Contenu du modale */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; */
+}
+
+.modal-content .reservationForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content .reservationForm input{
+    width: 100px;
+    align-self: center;
+}
+
+/* Bouton pour fermer le modale */
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style pour les boutons du modale */
+.modal-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background-color: #4CAF50;
+    /* Vert */
+    color: white;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    /* Rouge */
+    color: white;
+}
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    /* .sidebar {
+        width: 100%;
+        order: 2;
+        padding: 20px 0;
+    } */
+
+    .main {
+        width: 100%;
+        order: 1;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.woff2') format('woff2'),
+        url('fonts/Roboto-Regular.woff') format('woff'),
+        url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.woff2') format('woff2'),
+        url('fonts/Roboto-Bold.woff') format('woff'),
+        url('fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+body{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5 ;
+    color: #14213D;
+    background-color: #14213D;
+/* 
+    background-color: black; */
+
+}
+
+h1{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.login{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 120px;
+    gap: 20px;
+    border:  3px solid #eb9100; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.815);
+    border-radius: 5%;
+    
+    
+    box-shadow: 0 0 15px  #14213D,
+    inset 0 0 25px rgba(255, 255, 255, 0.5);
+    
+}
+
+.login .img_login{
+    width: 150px ;
+    height: 140px;
+}
+
+.login .login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login_email,
+.login_pass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+
+}
+
+.login_pass label, .login_email label{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+
+}
+
+.login_pass input,
+.login_email input {
+    width: 260px;
+    height: 20px;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    border: 1px solid #14213D;
+}
+
+.login_pass input:focus,
+.login_email input:focus {
+    outline: 1px solid #ff9d00;
+    transform: scale(1.05);
+    transition: background-color 0.4s, opacity 0.8s;
+}
+
+.affiche_pass{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 13px;
+    font-weight:600;
+    
+}
+
+.affiche_pass #checkbox{
+    width: 20px;
+    height: 20px;
+   
+
+}
+#login-button{
+    width: 380px;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #14213D;
+    color: #FCA311;
+    cursor: pointer;
+}
+
+#login-button:hover{
+    cursor: pointer;
+    outline-color: #14213D;
+    background-color: #fca211;
+    color: #14213D;
+    transform: scale(1.05);
+    transition: background-color 0.4s, opacity 0.8s;
+}

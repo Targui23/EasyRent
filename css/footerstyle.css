@@ -1,0 +1,604 @@
+@media (min-width : 1440px) {
+    a {
+            text-decoration: none;
+        }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: rgb(165, 165, 165);
+        padding-bottom: 70px;
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 50px;
+        /* padding-left: 70px;
+        padding-right: 70px; */
+        margin: 0;
+        gap:50px;
+        
+    }
+    .footer .logo_footer img{
+        width: 80px;
+    }
+
+    .horiz_line{
+        border: solid 1px black;
+        height: 220px;
+        margin-left: 30px;
+    }
+
+    .footer .logo_footer{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        padding: 30px;
+        
+    }
+
+    /* .footer .center_footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding: 10px;
+    } */
+
+    .footer .center_footer ul{
+        display: flex;
+        flex-direction: row ;
+        justify-content: flex-start;
+        align-items: center;
+        list-style: none;
+        gap: 10px;
+        
+        
+    }
+
+    .footer .center_footer .nav_social{
+        list-style: none;
+    
+    }
+
+    /* .footer .info_footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        
+    }
+    .footer h2 {
+        font-size: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        
+        
+    }
+    
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+        padding-left: 20px;
+    }
+        .footer .info_footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 15px;
+    
+        }
+
+    footer .footer_contact{
+        text-align: start;
+        margin: 0;
+        padding: 0;
+         */
+        .footer .footer_contact {
+            text-align: center;
+           
+            
+            font-size: 20px;
+
+            }
+
+    
+
+    .social .nav_social  {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+       
+        
+
+    }
+    .facebook .fa-brands,
+    .youtube .fa-brands,
+    .instagram .fa-brands {
+        font-size: 25px;
+        
+        
+       
+    }
+    
+        .facebook .fa-brands,
+        .youtube .fa-brands,
+        .instagram .fa-brands {
+        /* background-color: blue; */
+        color: rgb(228, 176, 4);
+         border-radius: 50px;
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+
+    .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(102, 102, 102);
+            padding-bottom: 70px;
+            padding-left: 70px;
+            margin: 0;
+            gap: 30px;
+    
+        }
+    
+        .footer .logo_footer img {
+            width: 100px;
+        }
+    
+        .footer .logo_footer {
+            padding: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        .horiz_line {
+            border: solid 1px black;
+            height: 220px;
+            margin-left: 30px;
+        }
+    
+        .footer .info_footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 15px;
+    
+        }
+        
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+    
+    
+        }
+        footer  h2{
+            font-size: 20px;
+        }
+    
+        th,
+        td {
+            padding-bottom: 8px;
+            text-align: start;
+            padding-left: 20px;
+        }
+    
+        footer .footer_contact {
+            text-align: start;
+            padding-top: 10px;
+        }
+    
+        .social {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: start;
+            
+    
+        }
+    
+        .social .nav_social {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: start;
+            gap: 20px;
+            list-style: none;
+            padding-top: 5px;
+    
+        }
+    
+        .facebook .fa-brands,
+        .youtube .fa-brands,
+        .instagram .fa-brands {
+            font-size: 20px;
+    
+    
+    
+        }
+    
+        .facebook .fa-brands,
+        .youtube .fa-brands,
+        .instagram .fa-brands {
+            /* background-color: blue; */
+            color: rgb(228, 176, 4);
+            border-radius: 50px;
+        }
+    
+    }
+
+@media (min-width : 768px) and (max-width: 1023px){
+    
+    
+    
+            .footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(102, 102, 102);
+                padding: 25px;
+                margin: 0;
+                gap: 30px;
+    
+            }
+    
+            .footer .logo_footer img {
+                width: 85px;
+            }
+    
+            .footer .logo_footer {
+                padding: 1px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+            }
+    
+            .horiz_line {
+                border: solid 1px black;
+                height: 150px;
+                margin-left: 10px;
+            }
+    
+            .footer .info_footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+    
+    
+            }
+    
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+    
+    
+            }
+    
+            footer h2 {
+                font-size: 15px;
+            }
+    
+            th,
+            td {
+                padding-bottom: 5px;
+                text-align: start;
+                padding-left: 10px;
+            }
+    
+            footer .footer_contact {
+                text-align: start;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+    
+            }
+    
+            .social {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+    
+    
+            }
+    
+            .social .nav_social {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                list-style: none;
+    
+    
+            }
+    
+            .facebook .fa-brands,
+            .youtube .fa-brands,
+            .instagram .fa-brands {
+                font-size: 20px;
+    
+    
+    
+            }
+    
+            .facebook .fa-brands,
+            .youtube .fa-brands,
+            .instagram .fa-brands {
+                /* background-color: blue; */
+                color: rgb(228, 176, 4);
+    
+            }
+    
+        }
+
+
+
+
+
+@media (min-width: 425px) and (max-width: 767px) {
+
+
+    .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(102, 102, 102);
+            padding: 25px;
+            margin: 0;
+            gap: 15px;
+    
+        }
+    
+        .footer .logo_footer img {
+            width: 60px;
+            padding-top: 10px;
+            padding-bottom: 0;
+        }
+    
+        .footer .logo_footer {
+            padding: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+    
+        .horiz_line {
+            border: solid 1px black;
+            height: 150px;
+            margin-left: 10px;
+            display: none;
+        }
+    
+        .footer .info_footer {
+            display: flex;
+            flex-direction: column;
+    
+            justify-content: flex-start;
+            padding-top: 7px;
+    
+        }
+    
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+    
+    
+        }
+    
+        footer h3 {
+            font-size: 15px;
+        }
+    
+        th,
+        td {
+            padding-bottom: 5px;
+            text-align: start;
+    
+        }
+    
+        footer .footer_contact {
+            text-align: start;
+    
+        }
+    
+        .social {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+    
+    
+    
+        }
+    
+        .info_footer .horaire {
+            padding-left: 15px;
+        }
+    
+        
+    
+        .social .nav_social {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            list-style: none;
+    
+    
+        }
+    
+        .facebook .fa-brands,
+        .youtube .fa-brands,
+        .instagram .fa-brands {
+            font-size: 20px;
+    
+    
+    
+        }
+    
+        .facebook .fa-brands,
+        .youtube .fa-brands,
+        .instagram .fa-brands {
+            /* background-color: blue; */
+            color: rgb(228, 176, 4);
+    
+        }
+
+}
+
+
+@media  (max-width: 424px) {
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(102, 102, 102);
+        padding: 25px;
+        margin: 0;
+        gap: 15px;
+
+    }
+
+    .footer .logo_footer img {
+        width:  60px;
+        padding-top: 10px;
+        padding-bottom: 0;
+    }
+    .footer .logo_footer {
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .horiz_line {
+        border: solid 1px black;
+        height: 150px;
+        margin-left: 10px;
+        display:  none;
+    }
+
+    .footer .info_footer {
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: flex-start;
+        padding-top: 7px;
+
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+
+    }
+
+    footer h3 {
+        font-size: 15px;
+    }
+
+    th,
+    td {
+        padding-bottom: 5px;
+        text-align: start;
+        
+    }
+
+    footer .footer_contact {
+        text-align: start;
+
+    }
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        
+
+
+    }
+    .info_footer .horaire{
+        padding-left: 15px;
+    }
+
+    /* .info_footer td{
+        padding: 0;
+    } */
+
+    .social .nav_social {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        list-style: none;
+
+
+    }
+
+    .facebook .fa-brands,
+    .youtube .fa-brands,
+    .instagram .fa-brands {
+        font-size: 20px;
+
+
+
+    }
+
+    .facebook .fa-brands,
+    .youtube .fa-brands,
+    .instagram .fa-brands {
+        /* background-color: blue; */
+        color: rgb(228, 176, 4);
+
+    }
+
+
+}
